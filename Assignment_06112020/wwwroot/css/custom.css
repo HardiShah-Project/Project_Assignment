@@ -1,0 +1,82 @@
+﻿@import url('custom.css');
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header-right {
+    float: right;
+}
+
+.navbar-brand {
+    margin-top: -12px;
+    margin-bottom: -12px;
+    margin-left: -14px;
+}
+
+#input_btn_calendar {
+    float: right;
+    margin-top: -26px;
+    margin-right: 10px;
+}
+
+#submit {
+    margin-left: 420px;
+}
+
+thead th {
+    background-color: darkblue;
+    color: white;
+}
+
+.navbar-custom {
+    background-color: darkblue;
+}
+
+.navbar-text {
+    color: floralwhite;
+}
+
+.footer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+}
+
+#addButton {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    float: right;
+}
+
+@media screen and (min-width: 320px) {
+    .navbar {
+        width: 100%;
+    }
+
+    #addButton {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        float: right;
+        margin-right: -14px;
+    }
+
+    thead th {
+        background-color: darkblue;
+        color: white;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .navbar {
+        width: 100%;
+    }
+
+    #addButton {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        float: right;
+        margin-right: -2px;
+    }
+}
