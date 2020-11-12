@@ -70,8 +70,8 @@ namespace Assignment_06112020.Controllers
                     break;
 
             }
-            return View(records.ToPagedList(page ?? 1, 2));
-            //return View(context.EmpProjects.ToList());
+            return View(records.ToPagedList(page ?? 1, 3));
+           
         }
 
         // GET: EmpProject/Details/5
