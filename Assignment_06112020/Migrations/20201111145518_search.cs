@@ -57,18 +57,18 @@ namespace Assignment_06112020.Migrations
                        then Skils
                    end desc)
              as RowNum,
-  COUNT(*) over() as TotalCount,
-  Code,
-  Name,
-JoiningDate,
-  ReleaseDate
-  from Employees
-  where(@Search IS NULL
-    Or Code like '%' + @Search + '%'
-    Or Name like '%' + @Search + '%'
-    Or JoiningDate like '%' + @Search + '%'
-    Or ReleaseDate like '%' + @Search + '%'
-    Or Skils like '%' + @Search + '%')
+              COUNT(*) over() as TotalCount,
+              Code,
+              Name,
+              JoiningDate,
+              ReleaseDate
+              from Employees
+              where(@Search IS NULL
+                Or Code like '%' + @Search + '%'
+                Or Name like '%' + @Search + '%'
+                Or JoiningDate like '%' + @Search + '%'
+                Or ReleaseDate like '%' + @Search + '%'
+                Or Skils like '%' + @Search + '%')
  )
  Select*
  from CTE

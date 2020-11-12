@@ -1,5 +1,4 @@
-﻿@*@model IEnumerable<Assignment_06112020.Models.EmpProject>*@
-@using X.PagedList.Mvc.Core;
+﻿@using X.PagedList.Mvc.Core;
 @using X.PagedList;
 @using X.PagedList.Web.Common;
 
@@ -27,12 +26,7 @@
                     <thead>
                         <tr class="link">
                             <th>
-                                @Html.ActionLink("Name", "Index", new
-                            {
-                                    sort = ViewBag.SortByName,
-                                    searchBy = Context.Request.Query["searchBy"].ToString(),
-                                    search = Context.Request.Query["search"].ToString()
-                                })
+                                @Html.ActionLink("Name", "Index", new { sort = ViewBag.SortByName, searchBy = Context.Request.Query["searchBy"].ToString(), search = Context.Request.Query["search"].ToString() })
                             </th>
                             <th>
                                 @Html.ActionLink("StartDate", "Index", new { sort = ViewBag.SortByStartDate })
