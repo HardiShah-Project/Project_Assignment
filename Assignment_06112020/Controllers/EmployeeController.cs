@@ -72,7 +72,7 @@ namespace Assignment_06112020.Controllers
             }
             return View(records.ToPagedList(page ?? 1, 3));
 
-            //return View(context.Employees.FromSqlRaw("sp_GetEmployee").ToList());
+           // return View(context.Employees.FromSqlRaw("sp_GetEmployee").ToList());
         }
         // GET: Employee/Details/5
         public ActionResult Details(int id)
