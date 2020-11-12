@@ -1,0 +1,59 @@
+﻿@model Assignment_06112020.Models.EmpProject
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayOutPage.cshtml";
+}
+
+@using (Html.BeginForm(new { @id = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <br />
+
+    <div class="form-horizontal">
+        @Html.HiddenFor(model => model.Code)
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="col-md-10">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label " })
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @id = "txtName" })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <div class="form-group">
+                @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label " })
+                @Html.TextBoxFor(model => model.StartDate, new { @class = "form-control datepicker", @id = "txtStartDate" })
+                <span class="input-group-addon" style="margin-left:872px;margin-top:-26px;"><i class="fa fa-calendar"></i></span>
+                @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="col-md-10">
+            <div class="form-group">
+                @Html.LabelFor(model => model.EndDate, htmlAttributes: new { @class = "control-label " })
+                @Html.TextBoxFor(model => model.EndDate, new { @class = "form-control datepicker", @id = "txtEndDate" })
+                @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+                <span class="input-group-addon" style="margin-left:872px;margin-top:-26px;"><i class="fa fa-calendar"></i></span>
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Technologies, htmlAttributes: new { @class = "control-label " })
+                @Html.EditorFor(model => model.Technologies, new { htmlAttributes = new { @class = "form-control ", @id = "txtTechnologies" } })
+                @Html.ValidationMessageFor(model => model.Technologies, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" id="submit" onclick="addEmpProject()" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+

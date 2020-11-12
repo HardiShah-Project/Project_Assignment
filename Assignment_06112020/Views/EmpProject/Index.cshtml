@@ -1,0 +1,104 @@
+﻿@*@model IEnumerable<Assignment_06112020.Models.EmpProject>*@
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using X.PagedList.Web.Common;
+
+@model IPagedList<Assignment_06112020.Models.EmpProject>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayOutPage.cshtml";
+}
+
+<div class="row">
+    @using (Html.BeginForm("Index", "EmpProject", FormMethod.Get))
+    {
+        <p class="search">
+            Search By: @Html.RadioButton("searchBy", "Name", true)<text>Name</text>
+            @Html.RadioButton("searchBy", "Technologies")<text>Technologies</text>
+            @Html.TextBox("search")
+            <input type="submit" value="Search" id="submit" class="btn btn-info" />
+        </p>
+    }
+    <div class="col-md-12">
+        <div class="shadow-lg p-3 mb-5 bg-white rounded" id="shadow">
+            <a class="btn btn-primary" id="addButton" href="/EmpProject/Create"><i class="fa fa-plus"></i> Add New</a>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered" style="width:100%" ;>
+                    <thead>
+                        <tr class="link">
+                            <th>
+                                @Html.ActionLink("Name", "Index", new
+                            {
+                                    sort = ViewBag.SortByName,
+                                    searchBy = Context.Request.Query["searchBy"].ToString(),
+                                    search = Context.Request.Query["search"].ToString()
+                                })
+                            </th>
+                            <th>
+                                @Html.ActionLink("StartDate", "Index", new { sort = ViewBag.SortByStartDate })
+                            </th>
+                            <th>
+                                @Html.ActionLink("EndDate", "Index", new { sort = ViewBag.SortByEndDate })
+                            </th>
+                            <th>
+                                @Html.ActionLink("Technologies", "Index", new { sort = ViewBag.SortByTechnologies, searchBy = Context.Request.Query["searchBy"].ToString(), search = Context.Request.Query["search"].ToString() })
+                            </th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @if (Model.Count() == 0)
+                        {
+                            <tr>
+                                <td colspan="6"> Records not found </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr id="row_@item.Code">
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name, new { id = "txtName" })
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StartDate, new { id = "txtStartDate" })
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EndDate, new { id = "txtEndDate" })
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Technologies, new { id = "txtTechnologies" })
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-success" href="/EmpProject/Edit/@item.Code"> <i class="fa fa-pencil-square-o fa-2x "></i></a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger" href="#" id="Confirmdelete" onclick="Confirmdelete(@item.Code)"> <i class="fa fa-trash-o fa-2x"></i> </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        <partial name="_EmpProjectDelete" />
+        <input type="hidden" id="hiddenId" />
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new
+        {
+           page,
+           searchBy = Context.Request.Query["searchBy"].ToString(),
+           search = Context.Request.Query["search"].ToString(),
+           sort = Context.Request.Query["sort"].ToString()
+        }), new PagedListRenderOptionsBase()
+         {
+               Display = PagedListDisplayMode.IfNeeded,
+               DisplayPageCountAndCurrentLocation = true,
+               DisplayItemSliceAndTotal = true
+          })
+    </div>
+</div>

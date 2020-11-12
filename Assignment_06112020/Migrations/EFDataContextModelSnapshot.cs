@@ -21,9 +21,10 @@ namespace Assignment_06112020.Migrations
 
             modelBuilder.Entity("Assignment_06112020.Models.EmpProject", b =>
                 {
-                    b.Property<string>("Code")
+                    b.Property<int>("Code")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
@@ -46,7 +47,7 @@ namespace Assignment_06112020.Migrations
                     b.HasData(
                         new
                         {
-                            Code = "001",
+                            Code = 1,
                             EndDate = new DateTime(2021, 1, 12, 0, 5, 0, 0, DateTimeKind.Unspecified),
                             Name = "John",
                             StartDate = new DateTime(2019, 1, 10, 0, 3, 0, 0, DateTimeKind.Unspecified),
@@ -54,7 +55,7 @@ namespace Assignment_06112020.Migrations
                         },
                         new
                         {
-                            Code = "002",
+                            Code = 2,
                             EndDate = new DateTime(2021, 1, 18, 0, 8, 0, 0, DateTimeKind.Unspecified),
                             Name = "Chris",
                             StartDate = new DateTime(2020, 1, 5, 0, 2, 0, 0, DateTimeKind.Unspecified),
@@ -62,7 +63,7 @@ namespace Assignment_06112020.Migrations
                         },
                         new
                         {
-                            Code = "003",
+                            Code = 3,
                             EndDate = new DateTime(2022, 1, 20, 0, 4, 0, 0, DateTimeKind.Unspecified),
                             Name = "Mukesh",
                             StartDate = new DateTime(2019, 1, 7, 0, 3, 0, 0, DateTimeKind.Unspecified),
@@ -72,9 +73,10 @@ namespace Assignment_06112020.Migrations
 
             modelBuilder.Entity("Assignment_06112020.Models.Employee", b =>
                 {
-                    b.Property<string>("Code")
+                    b.Property<int>("Code")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("JoiningDate")
                         .HasColumnType("datetime2");
@@ -97,7 +99,7 @@ namespace Assignment_06112020.Migrations
                     b.HasData(
                         new
                         {
-                            Code = "001",
+                            Code = 1,
                             JoiningDate = new DateTime(2019, 1, 10, 0, 3, 0, 0, DateTimeKind.Unspecified),
                             Name = "John",
                             ReleaseDate = new DateTime(2021, 1, 12, 0, 5, 0, 0, DateTimeKind.Unspecified),
@@ -105,7 +107,7 @@ namespace Assignment_06112020.Migrations
                         },
                         new
                         {
-                            Code = "002",
+                            Code = 2,
                             JoiningDate = new DateTime(2020, 1, 5, 0, 2, 0, 0, DateTimeKind.Unspecified),
                             Name = "Chris",
                             ReleaseDate = new DateTime(2021, 1, 10, 0, 8, 0, 0, DateTimeKind.Unspecified),
@@ -113,7 +115,7 @@ namespace Assignment_06112020.Migrations
                         },
                         new
                         {
-                            Code = "003",
+                            Code = 3,
                             JoiningDate = new DateTime(2019, 1, 7, 0, 3, 0, 0, DateTimeKind.Unspecified),
                             Name = "Mukesh",
                             ReleaseDate = new DateTime(2022, 1, 2, 0, 4, 0, 0, DateTimeKind.Unspecified),

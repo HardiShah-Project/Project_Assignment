@@ -4,16 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewBag.Title</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
     <link rel="stylesheet" href="~/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.css"  />
     <link rel="stylesheet" href="~/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/bootstrap-theme.min.css" />
-    <link rel="stylesheet" href="~/css/custom.css" />
     <link rel="stylesheet" href="~/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/css/custom.css" />
 </head>
 <body>
     <nav class="navbar navbar-custom navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#"> <img class="img-center" height="80" width="80" src="~/Images/medico1.png"></a>
+        <a class="navbar-brand" href="#"> <img class="img-center" height="80" width="80" src="~/Images/images.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,17 +33,18 @@
     <div class="container">
         @RenderBody()
     </div>
+
     <footer class=" footer text-muted text-center">
         <div class="container">
             Copyright &copy; My ASP.NET Application @DateTime.Now.Year
         </div>
     </footer>
+
     <script src="~/js/jquery-3.5.1.min.js"></script>
-    <script src="~/js/bootstrap.min.js"></script>
     <script src="~/js/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
     <script src="~/js/bootstrap.js"></script>
     <script src="~/js/custom.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

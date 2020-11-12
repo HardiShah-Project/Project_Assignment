@@ -9,7 +9,7 @@ namespace Assignment_06112020.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Code { get; set; }
+        public int Code { get; set; }
 
         [Required(ErrorMessage = "Please Enter Project Name")]
         [DataType(DataType.Text)]
@@ -17,12 +17,10 @@ namespace Assignment_06112020.Models
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Please Enter Start Date")]
-        [DataType(DataType.DateTime), DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:mm/dd/yyyy}")]
         [Display(Name = "Start Date")]
         public DateTime StartDate { get; set; }
 
         [Required(ErrorMessage = "Please Enter End Dtae")]
-        [DataType(DataType.DateTime), DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:mm/dd/yyyy}")]
         [Display(Name = "End Date")]
         public DateTime EndDate { get; set; }
 

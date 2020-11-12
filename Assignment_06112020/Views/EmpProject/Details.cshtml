@@ -1,0 +1,36 @@
+﻿@model Assignment_06112020.Models.EmpProject
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayOutPage.cshtml";
+}
+<br/>
+<h1>Employee's Project Details:</h1>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Technologies)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Technologies)
+        </dd>
+    </dl>
+
+

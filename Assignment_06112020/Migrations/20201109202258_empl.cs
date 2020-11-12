@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Assignment_06112020.Migrations
 {
-    public partial class Employee : Migration
+    public partial class empl : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,7 +11,8 @@ namespace Assignment_06112020.Migrations
                 name: "Employees",
                 columns: table => new
                 {
-                    Code = table.Column<string>(nullable: false),
+                    Code = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: false),
                     JoiningDate = table.Column<DateTime>(nullable: false),
                     ReleaseDate = table.Column<DateTime>(nullable: false),
@@ -26,7 +27,8 @@ namespace Assignment_06112020.Migrations
                 name: "EmpProjects",
                 columns: table => new
                 {
-                    Code = table.Column<string>(nullable: false),
+                    Code = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: false),
                     StartDate = table.Column<DateTime>(nullable: false),
                     EndDate = table.Column<DateTime>(nullable: false),
@@ -55,9 +57,9 @@ namespace Assignment_06112020.Migrations
                 columns: new[] { "Code", "EndDate", "Name", "StartDate", "Technologies" },
                 values: new object[,]
                 {
-                    { "001", new DateTime(2021, 1, 12, 0, 5, 0, 0, DateTimeKind.Unspecified), "John", new DateTime(2019, 1, 10, 0, 3, 0, 0, DateTimeKind.Unspecified), ".NET" },
-                    { "002", new DateTime(2021, 1, 18, 0, 8, 0, 0, DateTimeKind.Unspecified), "Chris", new DateTime(2020, 1, 5, 0, 2, 0, 0, DateTimeKind.Unspecified), "Angular" },
-                    { "003", new DateTime(2022, 1, 20, 0, 4, 0, 0, DateTimeKind.Unspecified), "Mukesh", new DateTime(2019, 1, 7, 0, 3, 0, 0, DateTimeKind.Unspecified), "React" }
+                    { 1, new DateTime(2021, 1, 12, 0, 5, 0, 0, DateTimeKind.Unspecified), "John", new DateTime(2019, 1, 10, 0, 3, 0, 0, DateTimeKind.Unspecified), ".NET" },
+                    { 2, new DateTime(2021, 1, 18, 0, 8, 0, 0, DateTimeKind.Unspecified), "Chris", new DateTime(2020, 1, 5, 0, 2, 0, 0, DateTimeKind.Unspecified), "Angular" },
+                    { 3, new DateTime(2022, 1, 20, 0, 4, 0, 0, DateTimeKind.Unspecified), "Mukesh", new DateTime(2019, 1, 7, 0, 3, 0, 0, DateTimeKind.Unspecified), "React" }
                 });
 
             migrationBuilder.InsertData(
@@ -65,9 +67,9 @@ namespace Assignment_06112020.Migrations
                 columns: new[] { "Code", "JoiningDate", "Name", "ReleaseDate", "Skils" },
                 values: new object[,]
                 {
-                    { "001", new DateTime(2019, 1, 10, 0, 3, 0, 0, DateTimeKind.Unspecified), "John", new DateTime(2021, 1, 12, 0, 5, 0, 0, DateTimeKind.Unspecified), ".NET" },
-                    { "002", new DateTime(2020, 1, 5, 0, 2, 0, 0, DateTimeKind.Unspecified), "Chris", new DateTime(2021, 1, 10, 0, 8, 0, 0, DateTimeKind.Unspecified), "Angular" },
-                    { "003", new DateTime(2019, 1, 7, 0, 3, 0, 0, DateTimeKind.Unspecified), "Mukesh", new DateTime(2022, 1, 2, 0, 4, 0, 0, DateTimeKind.Unspecified), "React" }
+                    { 1, new DateTime(2019, 1, 10, 0, 3, 0, 0, DateTimeKind.Unspecified), "John", new DateTime(2021, 1, 12, 0, 5, 0, 0, DateTimeKind.Unspecified), ".NET" },
+                    { 2, new DateTime(2020, 1, 5, 0, 2, 0, 0, DateTimeKind.Unspecified), "Chris", new DateTime(2021, 1, 10, 0, 8, 0, 0, DateTimeKind.Unspecified), "Angular" },
+                    { 3, new DateTime(2019, 1, 7, 0, 3, 0, 0, DateTimeKind.Unspecified), "Mukesh", new DateTime(2022, 1, 2, 0, 4, 0, 0, DateTimeKind.Unspecified), "React" }
                 });
 
             migrationBuilder.InsertData(

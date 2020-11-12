@@ -13,35 +13,36 @@
     <div class="form-horizontal">
         @Html.HiddenFor(model => model.Code)
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @id = "txtName" } })
+
+        <div class="col-md-10">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label " })
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @id = "txtName" })
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.JoiningDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.JoiningDate, new { htmlAttributes = new { @class = "form-control datepicker", @id = "txtJoingDate" } })
-                <span class="input-group-addon" id="input_btn_calendar"><i class="fa fa-calendar"></i></span>
+        <div class="col-md-10">
+            <div class="form-group">
+                @Html.LabelFor(model => model.JoiningDate, htmlAttributes: new { @class = "control-label " })
+                @Html.TextBoxFor(model => model.JoiningDate, new { @class = "form-control datepicker", @id = "txtJoiningDate" })
+                <span class="input-group-addon" style="margin-left:872px;margin-top:-26px;"><i class="fa fa-calendar"></i></span>
                 @Html.ValidationMessageFor(model => model.JoiningDate, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ReleaseDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.ReleaseDate, new { htmlAttributes = new { @class = "form-control datepicker", @id = "txtReleaseDate" } })
-                <span class="input-group-addon" id="input_btn_calendar"><i class="fa fa-calendar"></i></span>
-                @Html.ValidationMessageFor(model => model.ReleaseDate, "", new { @class = "text-danger" })
+        <div class="col-md-10">
+            <div class="form-group">
+                @Html.LabelFor(model => model.ReleaseDate, htmlAttributes: new { @class = "control-label " })
+                @Html.TextBoxFor(model => model.ReleaseDate, new { @class = "form-control datepicker", @id = "txtReleaseDate" })
+                @Html.ValidationMessageFor(model => model.JoiningDate, "", new { @class = "text-danger" })
+                <span class="input-group-addon" style="margin-left:872px;margin-top:-26px;"><i class="fa fa-calendar"></i></span>
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Skils, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="col-md-10">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Skils, htmlAttributes: new { @class = "control-label " })
                 @Html.EditorFor(model => model.Skils, new { htmlAttributes = new { @class = "form-control ", @id = "txtSkils" } })
                 @Html.ValidationMessageFor(model => model.Skils, "", new { @class = "text-danger" })
             </div>

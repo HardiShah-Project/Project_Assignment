@@ -2,6 +2,7 @@ using Assignment_06112020.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,6 +25,7 @@ namespace Assignment_06112020
             services.AddControllersWithViews();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddDbContext<EFDataContext>(item => item.UseSqlServer(Configuration.GetConnectionString("myconn")));
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
 
         }
 

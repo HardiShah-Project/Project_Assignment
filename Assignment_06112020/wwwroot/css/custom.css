@@ -20,11 +20,25 @@ body {
     margin-top: -26px;
     margin-right: 10px;
 }
-
+.shadow-lg{
+    margin-top:42px;
+}
+#shadow{
+    margin-top:34px;
+}
+.search {
+    margin-top: 20px;
+    margin-left: 19px;
+}
 #submit {
     margin-left: 420px;
 }
-
+.btn-info.custom-btn {
+    background-color: lightseagreen;
+}
+.link a {
+    color: floralwhite;
+}
 thead th {
     background-color: darkblue;
     color: white;
@@ -37,7 +51,13 @@ thead th {
 .navbar-text {
     color: floralwhite;
 }
-
+.pagination-container {
+    margin-left: 645px;
+}
+#submit {
+    margin-top: -4px;
+    margin-left: 4px;
+}
 .footer {
     width: 100%;
     bottom: 0;
@@ -45,21 +65,14 @@ thead th {
 }
 
 #addButton {
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 12px;
+    margin-top:-4px;
     float: right;
 }
 
 @media screen and (min-width: 320px) {
     .navbar {
         width: 100%;
-    }
-
-    #addButton {
-        margin-bottom: 20px;
-        margin-top: 20px;
-        float: right;
-        margin-right: -14px;
     }
 
     thead th {
@@ -73,10 +86,4 @@ thead th {
         width: 100%;
     }
 
-    #addButton {
-        margin-bottom: 20px;
-        margin-top: 20px;
-        float: right;
-        margin-right: -2px;
-    }
 }

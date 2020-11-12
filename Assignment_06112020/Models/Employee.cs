@@ -8,7 +8,7 @@ namespace Assignment_06112020.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Code { get; set; }
+        public int Code { get; set; }
 
         [Required(ErrorMessage = "Please Enter Employee Name")]
         [DataType(DataType.Text)]
@@ -16,10 +16,12 @@ namespace Assignment_06112020.Models
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Please Enter Joining Date")]
+       
         [Display(Name = "Joining Date")]
         public DateTime JoiningDate { get; set; }
 
         [Display(Name = "Release Date")]
+        
         public DateTime ReleaseDate { get; set; }
 
         [Required(ErrorMessage = "Please Choose Skils")]

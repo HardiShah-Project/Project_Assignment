@@ -16,9 +16,9 @@ namespace Assignment_06112020.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Employee>().HasData(
-                new Employee() { Code = "001", Name = "John", JoiningDate = DateTime.ParseExact("10/03/2019", "dd/mm/yyyy", null), ReleaseDate = DateTime.ParseExact("12/05/2021", "dd/mm/yyyy", null), Skils = ".NET" },
-                new Employee() { Code = "002", Name = "Chris", JoiningDate = DateTime.ParseExact("05/02/2020", "dd/mm/yyyy", null), ReleaseDate = DateTime.ParseExact("10/08/2021", "dd/mm/yyyy", null), Skils = "Angular" },
-                new Employee() { Code = "003", Name = "Mukesh", JoiningDate = DateTime.ParseExact("07/03/2019", "dd/mm/yyyy", null), ReleaseDate = DateTime.ParseExact("02/04/2022", "dd/mm/yyyy", null), Skils = "React" });
+                new Employee() { Code = 1, Name = "John", JoiningDate = DateTime.ParseExact("10/03/2019", "dd/mm/yyyy", null), ReleaseDate = DateTime.ParseExact("12/05/2021", "dd/mm/yyyy", null), Skils = ".NET" },
+                new Employee() { Code = 2, Name = "Chris", JoiningDate = DateTime.ParseExact("05/02/2020", "dd/mm/yyyy", null), ReleaseDate = DateTime.ParseExact("10/08/2021", "dd/mm/yyyy", null), Skils = "Angular" },
+                new Employee() { Code = 3, Name = "Mukesh", JoiningDate = DateTime.ParseExact("07/03/2019", "dd/mm/yyyy", null), ReleaseDate = DateTime.ParseExact("02/04/2022", "dd/mm/yyyy", null), Skils = "React" });
 
             modelBuilder.Entity<Skill>().HasData(
                 new Skill() { ID = 1, SkilName = ".NET" },
@@ -26,10 +26,12 @@ namespace Assignment_06112020.Models
                 new Skill() { ID = 3, SkilName = "React" });
 
             modelBuilder.Entity<EmpProject>().HasData(
-                new EmpProject() { Code = "001", Name = "John", StartDate = DateTime.ParseExact("10/03/2019", "dd/mm/yyyy", null), EndDate = DateTime.ParseExact("12/05/2021", "dd/mm/yyyy", null), Technologies = ".NET" },
-                new EmpProject() { Code = "002", Name = "Chris", StartDate = DateTime.ParseExact("05/02/2020", "dd/mm/yyyy", null), EndDate = DateTime.ParseExact("18/08/2021", "dd/mm/yyyy", null), Technologies = "Angular" },
-                new EmpProject() { Code = "003", Name = "Mukesh", StartDate = DateTime.ParseExact("07/03/2019", "dd/mm/yyyy", null), EndDate = DateTime.ParseExact("20/04/2022", "dd/mm/yyyy", null), Technologies = "React" });
+                new EmpProject() { Code = 1, Name = "John", StartDate = DateTime.ParseExact("10/03/2019", "dd/mm/yyyy", null), EndDate = DateTime.ParseExact("12/05/2021", "dd/mm/yyyy", null), Technologies = ".NET" },
+                new EmpProject() { Code = 2, Name = "Chris", StartDate = DateTime.ParseExact("05/02/2020", "dd/mm/yyyy", null), EndDate = DateTime.ParseExact("18/08/2021", "dd/mm/yyyy", null), Technologies = "Angular" },
+                new EmpProject() { Code = 3, Name = "Mukesh", StartDate = DateTime.ParseExact("07/03/2019", "dd/mm/yyyy", null), EndDate = DateTime.ParseExact("20/04/2022", "dd/mm/yyyy", null), Technologies = "React" });
+
         }
     }
-
 }
+
+
