@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Tu1o+j9LwFUwes05m8qZ83AJh576maMEYchhXe07aE6c/EkdRCN2e5N+Nv8v2TAKPt2YdjaNyRaE6C/4KEUc1Q==",
+  "dgSpecHash": "nJDtiX51BYkEmyBimgguv97HOWEZmYT/SjPDXmFB6Q+74LLLi2gGv75JA9QnziY4cfss/ghtE11kChE1d7FJ6g==",
   "success": true,
   "projectFilePath": "D:\\Training\\Assignment_06112020\\Assignment_06112020\\Assignment_06112020.csproj",
   "expectedPackageFiles": [
@@ -98,8 +98,6 @@
     "C:\\Users\\pci215\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
-    "C:\\Users\\pci215\\.nuget\\packages\\pagedlist.core\\1.17.4\\pagedlist.core.1.17.4.nupkg.sha512",
-    "C:\\Users\\pci215\\.nuget\\packages\\pagedlist.core.mvc\\3.0.0\\pagedlist.core.mvc.3.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

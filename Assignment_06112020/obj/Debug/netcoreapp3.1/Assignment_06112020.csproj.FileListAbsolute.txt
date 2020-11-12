@@ -177,13 +177,11 @@ D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razo
 D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\EmpProject\Edit.cshtml.g.cs
 D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\EmpProject\Index.cshtml.g.cs
 D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\EmpProject\_EmpProjectDelete.cshtml.g.cs
-D:\Training\Assignment_06112020\Assignment_06112020\bin\Debug\netcoreapp3.1\PagedList.Core.dll
-D:\Training\Assignment_06112020\Assignment_06112020\bin\Debug\netcoreapp3.1\PagedList.Core.Mvc.dll
-D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Assignment_06112020.csproj.CoreCompileInputs.cache
-D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Assignment_06112020.MvcApplicationPartsAssemblyInfo.cs
-D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Assignment_06112020.MvcApplicationPartsAssemblyInfo.cache
 D:\Training\Assignment_06112020\Assignment_06112020\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 D:\Training\Assignment_06112020\Assignment_06112020\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 D:\Training\Assignment_06112020\Assignment_06112020\bin\Debug\netcoreapp3.1\X.PagedList.dll
 D:\Training\Assignment_06112020\Assignment_06112020\bin\Debug\netcoreapp3.1\X.PagedList.Mvc.Core.dll
 D:\Training\Assignment_06112020\Assignment_06112020\bin\Debug\netcoreapp3.1\X.PagedList.Web.Common.dll
+D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Assignment_06112020.csproj.CoreCompileInputs.cache
+D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Assignment_06112020.MvcApplicationPartsAssemblyInfo.cs
+D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Assignment_06112020.MvcApplicationPartsAssemblyInfo.cache

@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
-
 namespace Assignment_06112020.Models
 {
     public class EFDataContext : DbContext

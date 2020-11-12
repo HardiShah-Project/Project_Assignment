@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -27,5 +29,6 @@ namespace Assignment_06112020.Models
         [Required(ErrorMessage = "Please Choose Skils")]
         [Display(Name = " Employee's Skils")]
         public string Skils { get; set; }
+        //public IEnumerable<Skill> emp { get; set; }
     }
 }

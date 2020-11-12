@@ -13,6 +13,15 @@ namespace Assignment_06112020.Migrations
                 END";
             migrationBuilder.Sql(sp);
 
+            var id = @"CREATE PROCEDURE sp_GetEmployeeById  
+                     @Code int
+                AS
+                BEGIN                   
+                    select * from Employees where Code=@Code
+                END";
+            migrationBuilder.Sql(id);
+
+
             var proc = @"create procedure sp_AddEmployee
                 @Name nvarchar(25),
                 @JoiningDate datetime,
@@ -48,7 +57,7 @@ namespace Assignment_06112020.Migrations
                   @Code int     
                 as
                 begin
-                   Delete from Employee where Code = @Code
+                   Delete from Employees where Code = @Code
                 End";
             migrationBuilder.Sql(del);
                 
@@ -67,6 +76,9 @@ namespace Assignment_06112020.Migrations
 
             var del = @"Drop Procedure sp_DeleteEmployee";
             migrationBuilder.Sql(del);
+
+            var id = @"Drop Procedure sp_GetEmployeeById";
+            migrationBuilder.Sql(id);
         }
     }
 }

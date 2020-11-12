@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Assignment_06112020.Models;
 using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace Assignment_06112020.Controllers
 {
@@ -17,17 +18,16 @@ namespace Assignment_06112020.Controllers
         // GET: Employee
         public ActionResult Index()
         {
-            return View(context.Employees.ToList());
+            return View(context.Employees.FromSqlRaw("sp_GetEmployee").ToList());
         }
         // GET: Employee/Details/5
-        public  ActionResult Details(int id)
+        public ActionResult Details(int id)
         {
             if (id == 0)
             {
                 return NotFound();
             }
-
-            var employee =  context.Employees.FirstOrDefault(m => m.Code == id);
+            var employee = context.Employees.FromSqlRaw("sp_GetEmployeeById {0}", id).ToList().FirstOrDefault();
             if (employee == null)
             {
                 return NotFound();
@@ -42,16 +42,15 @@ namespace Assignment_06112020.Controllers
             return View();
         }
 
-        // POST: Employee/Create
-        
+        // POST: Employee/Create     
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public  ActionResult Create([Bind("Name,JoiningDate,ReleaseDate,Skils")] Employee employee)
+        public ActionResult Create([Bind("Name,JoiningDate,ReleaseDate,Skils")] Employee employee)
         {
             if (ModelState.IsValid)
             {
-                context.Add(employee);
-                context.SaveChanges();
+                context.Database.ExecuteSqlRaw("sp_AddEmployee {0},{1},{2},{3}", employee.Name,
+                employee.JoiningDate, employee.ReleaseDate, employee.Skils);
                 return RedirectToAction(nameof(Index));
             }
             return View(employee);
@@ -65,7 +64,7 @@ namespace Assignment_06112020.Controllers
                 return NotFound();
             }
 
-            var employee =  context.Employees.Find(id);
+            var employee = context.Employees.Find(id);
             if (employee == null)
             {
                 return NotFound();
@@ -84,11 +83,12 @@ namespace Assignment_06112020.Controllers
             }
 
             if (ModelState.IsValid)
-            {              
+            {
                 try
                 {
-                    context.Update(employee);
-                    context.SaveChanges();
+                    context.Database.ExecuteSqlRaw("sp_UpdateEmployee {0},{1},{2},{3},{4}", employee.Code, employee.Name,
+                    employee.JoiningDate, employee.ReleaseDate, employee.Skils);
+
                 }
                 catch (Exception)
                 {
@@ -109,14 +109,7 @@ namespace Assignment_06112020.Controllers
         [HttpPost]
         public ActionResult Delete(int id)
         {
-            {
-                 var emp = context.Employees.Where(val => val.Code == id).FirstOrDefault();
-                if (emp != null)
-                {
-                    context.Employees.Remove(emp);
-                    context.SaveChanges();
-                }                
-            }
+            var emp = context.Database.ExecuteSqlRaw("sp_DeleteEmployee {0}", id);
             return RedirectToAction("Index");
         }
 
