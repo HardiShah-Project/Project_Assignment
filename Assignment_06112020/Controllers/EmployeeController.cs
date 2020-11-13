@@ -4,6 +4,7 @@ using Assignment_06112020.Models;
 using System;
 using Microsoft.EntityFrameworkCore;
 using X.PagedList;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Assignment_06112020.Controllers
 {
@@ -91,9 +92,13 @@ namespace Assignment_06112020.Controllers
         }
 
         // GET: Employee/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
-            return View();
+            //var user = context.Employees.Find(id);
+           Employee emp = new Employee();
+            var cityList = context.Skills.ToList();
+            emp.CityList = new SelectList(cityList, "ID", "SkillName");
+            return View(emp);
         }
 
         // POST: Employee/Create     
