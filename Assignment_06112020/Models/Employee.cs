@@ -33,8 +33,7 @@ namespace Assignment_06112020.Models
 
         [NotMapped]
         public SelectList SkilList { get; set; }
-       [ForeignKey("ID")]
-        public virtual List<Skill> Skil { get; set; }
+   
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             throw new NotImplementedException();

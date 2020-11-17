@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -27,6 +28,10 @@ namespace Assignment_06112020.Models
         [Required(ErrorMessage = "Please Enter Technology")]
         [Display(Name = "Technology")]
         public string Technologies { get; set; }
+        public Nullable<int> ID { get; set; }
+
+        [NotMapped]
+        public SelectList TechnologyList { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {

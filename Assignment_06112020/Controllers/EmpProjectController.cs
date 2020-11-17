@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Assignment_06112020.Models;
 using System;
 using X.PagedList;
-
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Assignment_06112020.Controllers
 {
@@ -94,7 +94,10 @@ namespace Assignment_06112020.Controllers
         // GET: EmpProject/Create
         public ActionResult Create()
         {
-            return View();
+            EmpProject empProject = new EmpProject();
+            var technologyList = context.Skills.ToList();
+            empProject.TechnologyList = new SelectList(technologyList, "SkilName", "SkillName");
+            return View(empProject);
         }
 
         // POST: EmpProject/Create       
@@ -120,6 +123,8 @@ namespace Assignment_06112020.Controllers
             }
 
             var empProject = context.EmpProjects.Find(id);
+            var technologyList = context.Skills.ToList();
+            empProject.TechnologyList = new SelectList(technologyList, "SkilName", "SkillName");
             if (empProject == null)
             {
                 return NotFound();
