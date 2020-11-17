@@ -69,7 +69,7 @@ namespace Assignment_06112020.Controllers
                 default:
                     records = records.OrderBy(x => x.Name);
                     break;
-
+                    
             }
             return View(records.ToPagedList(page ?? 1, 3));
         }
