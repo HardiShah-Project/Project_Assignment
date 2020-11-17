@@ -14,6 +14,14 @@ body {
     margin-bottom: -12px;
     margin-left: -14px;
 }
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+.footer1{
+    width:100%;
+}
 
 #input_btn_calendar {
     float: right;
@@ -53,15 +61,11 @@ thead th {
 }
 .pagination-container {
     margin-left: 615px;
+    margin-top:-56px;
 }
 #submit {
     margin-top: -4px;
     margin-left: 4px;
-}
-.footer {
-    width: 100%;
-    bottom: 0;
-    position: fixed;
 }
 
 #addButton {

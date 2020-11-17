@@ -183,3 +183,4 @@ D:\Training\Assignment_06112020\Assignment_06112020\bin\Debug\netcoreapp3.1\X.Pa
 D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Assignment_06112020.csproj.CoreCompileInputs.cache
 D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Assignment_06112020.MvcApplicationPartsAssemblyInfo.cs
 D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Assignment_06112020.MvcApplicationPartsAssemblyInfo.cache
+D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout1.cshtml.g.cs
