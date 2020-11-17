@@ -72,8 +72,6 @@ namespace Assignment_06112020.Controllers
 
             }
             return View(records.ToPagedList(page ?? 1, 3));
-
-           // return View(context.Employees.FromSqlRaw("sp_GetEmployee").ToList());
         }
         // GET: Employee/Details/5
         public ActionResult Details(int id)
@@ -92,12 +90,11 @@ namespace Assignment_06112020.Controllers
         }
 
         // GET: Employee/Create
-        public ActionResult Create(int id)
+        public ActionResult Create()
         {
-            //var user = context.Employees.Find(id);
-           Employee emp = new Employee();
-            var cityList = context.Skills.ToList();
-            emp.CityList = new SelectList(cityList, "ID", "SkillName");
+            Employee emp = new Employee();
+            var skilList = context.Skills.ToList();
+            emp.SkilList = new SelectList(skilList, "SkilName", "SkillName");
             return View(emp);
         }
 
@@ -124,6 +121,8 @@ namespace Assignment_06112020.Controllers
             }
 
             var employee = context.Employees.Find(id);
+            var skilList = context.Skills.ToList();
+            employee.SkilList = new SelectList(skilList, "SkilName", "SkillName");
             if (employee == null)
             {
                 return NotFound();

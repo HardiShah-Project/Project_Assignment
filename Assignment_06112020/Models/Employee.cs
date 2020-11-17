@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Assignment_06112020.Models
 {
-    public class Employee
+    public class Employee: IValidatableObject
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -32,8 +32,20 @@ namespace Assignment_06112020.Models
         public Nullable<int> ID { get; set; }
 
         [NotMapped]
-        public SelectList CityList { get; set; }
-        [ForeignKey("ID")]
+        public SelectList SkilList { get; set; }
+       [ForeignKey("ID")]
         public virtual List<Skill> Skil { get; set; }
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            if (ReleaseDate < JoiningDate)
+            {
+                yield return new ValidationResult("ReleaseDate must be greater than JoiningDate");
+            }
+        }
     }
 }
