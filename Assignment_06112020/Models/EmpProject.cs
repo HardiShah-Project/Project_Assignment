@@ -25,7 +25,7 @@ namespace Assignment_06112020.Models
         [Display(Name = "End Date")]
         public DateTime EndDate { get; set; }
 
-        [Required(ErrorMessage = "Please Enter Technology")]
+        [Required(ErrorMessage = "Please Choose Technology")]
         [Display(Name = "Technology")]
         public string Technologies { get; set; }
         public Nullable<int> ID { get; set; }
