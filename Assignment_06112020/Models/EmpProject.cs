@@ -28,6 +28,7 @@ namespace Assignment_06112020.Models
         [Required(ErrorMessage = "Please Choose Technology")]
         [Display(Name = "Technology")]
         public string Technologies { get; set; }
+     
         public Nullable<int> ID { get; set; }
 
         [NotMapped]

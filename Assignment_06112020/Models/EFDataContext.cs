@@ -28,7 +28,6 @@ namespace Assignment_06112020.Models
                 new EmpProject() { Code = 1, Name = "John", StartDate = DateTime.ParseExact("10/03/2019", "dd/mm/yyyy", null), EndDate = DateTime.ParseExact("12/05/2021", "dd/mm/yyyy", null), Technologies = ".NET" },
                 new EmpProject() { Code = 2, Name = "Chris", StartDate = DateTime.ParseExact("05/02/2020", "dd/mm/yyyy", null), EndDate = DateTime.ParseExact("18/08/2021", "dd/mm/yyyy", null), Technologies = "Angular" },
                 new EmpProject() { Code = 3, Name = "Mukesh", StartDate = DateTime.ParseExact("07/03/2019", "dd/mm/yyyy", null), EndDate = DateTime.ParseExact("20/04/2022", "dd/mm/yyyy", null), Technologies = "React" });
-
         }
     }
 }

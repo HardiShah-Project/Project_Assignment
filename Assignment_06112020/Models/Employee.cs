@@ -29,6 +29,7 @@ namespace Assignment_06112020.Models
         [Required(ErrorMessage = "Please Choose Skils")]
         [Display(Name = " Employee's Skils")]
         public string Skils { get; set; }
+       
         public Nullable<int> ID { get; set; }
 
         [NotMapped]
