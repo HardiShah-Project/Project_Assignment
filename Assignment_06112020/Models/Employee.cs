@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -29,11 +30,16 @@ namespace Assignment_06112020.Models
         [Required(ErrorMessage = "Please Choose Skils")]
         [Display(Name = " Employee's Skils")]
         public string Skils { get; set; }
-       
         public Nullable<int> ID { get; set; }
+        [NotMapped]
+        public int Month { get; set; }
+        [NotMapped]
+        public int Count { get; set; }
 
         [NotMapped]
         public SelectList SkilList { get; set; }
+        [ForeignKey("ID")]
+        public virtual List<Skill> skill { get; set; }
    
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
