@@ -68,3 +68,31 @@ $(function () {
         changeYear: true
     });
 });
+//Dashboard.js
+$(".viewDetails").click(function () {
+    $(".modal-body").html('');
+    $.ajax({
+        type: 'GET',
+        url:  "/Dashboard/GetDetails",
+        data: { type: $(this).attr("data-type") },
+        success: function (response) {
+            $(".modal-body").html(response);
+            $("#exampleModal").modal('show');
+        },
+        error: function () {
+            alert("Something wrong");
+        }
+    });
+    $.ajax({
+        type: 'GET',
+        url: "/Dashboard/GetProject",
+        data: { type: $(this).attr("data-type") },
+        success: function (response) {
+            $(".modal-body").html(response);
+            $("#ProjectModal").modal('show');
+        },
+        error: function () {
+            alert("Something wrong");
+        }
+    });
+});
