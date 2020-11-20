@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Assignment_06112020.Models.EmpProject>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>StartDate</th>
+            <th>EndDate</th>
+            <th>Technologies</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var md in Model)
+        {
+            <tr>
+                <td>@md.Name </td>
+                <td>@md.StartDate </td>
+                <td>@md.EndDate </td>
+                <td>@md.Technologies </td>
+            </tr>
+        }
+    </tbody>
+</table>
