@@ -184,3 +184,13 @@ D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Assi
 D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Assignment_06112020.MvcApplicationPartsAssemblyInfo.cs
 D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Assignment_06112020.MvcApplicationPartsAssemblyInfo.cache
 D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout1.cshtml.g.cs
+D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\Home\JoiningDate.cshtml.g.cs
+D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\Home\ReleaseDate.cshtml.g.cs
+D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\Home\StartDate.cshtml.g.cs
+D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\Home\EndDate.cshtml.g.cs
+D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\Home\EmployeeSkill.cshtml.g.cs
+D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\Home\ProjectSkill.cshtml.g.cs
+D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutPage1.cshtml.g.cs
+D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\Dashboard\Dashboard.cshtml.g.cs
+D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\Dashboard\GetDetails.cshtml.g.cs
+D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\Dashboard\GetProject.cshtml.g.cs
