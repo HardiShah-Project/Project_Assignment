@@ -30,9 +30,15 @@ namespace Assignment_06112020.Models
         public string Technologies { get; set; }
      
         public Nullable<int> ID { get; set; }
+        [NotMapped]
+        public int Month { get; set; }
+        [NotMapped]
+        public int Count { get; set; }
 
         [NotMapped]
         public SelectList TechnologyList { get; set; }
+        [ForeignKey("ID")]
+        public virtual List<Skill> skill { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
