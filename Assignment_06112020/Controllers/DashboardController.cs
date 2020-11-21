@@ -43,5 +43,33 @@ namespace Assignment_06112020.Controllers
             }).ToList();
             return PartialView("~/Views/Dashboard/GetProject.cshtml", result);
         }
+        public ActionResult EmployeeSkill()
+        {
+            List<Employee> emp = null;
+            emp = (from t in context.Employees
+                   join a in context.Skills on t.Code equals a.ID
+                   select new Employee
+                   {
+                       Name = t.Name,
+                       JoiningDate = t.JoiningDate,
+                       ReleaseDate = t.ReleaseDate,
+                       Skils=t.Skils
+                   }).ToList();
+            return PartialView("~/Views/Dashboard/EmployeeSkill.cshtml", emp);
+        }
+        public ActionResult ProjectSkill()
+        {
+            List<EmpProject> prj = null;
+            prj = (from p in context.EmpProjects
+                   join s in context.Skills on p.Code equals s.ID
+                   select new EmpProject
+                   {
+                       Name = p.Name,
+                       StartDate = p.StartDate,
+                       EndDate = p.EndDate,
+                       Technologies = p.Technologies
+                   }).ToList();
+            return PartialView("~/Views/Dashboard/ProjectSkill.cshtml", prj);
+        }
     }
 }
