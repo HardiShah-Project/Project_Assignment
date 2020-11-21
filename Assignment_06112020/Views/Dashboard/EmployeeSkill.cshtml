@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Assignment_06112020.Models.Employee>
+
+<div class="list-group">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>JoiningDate</th>
+                <th>ReleaseDate</th>
+                <th>Skils</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var emp in Model)
+            {
+                <tr>
+                    <td>@emp.Name</td>
+                    <td>@emp.JoiningDate</td>
+                    <td>@emp.ReleaseDate</td>
+                    <td>@emp.Skils</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

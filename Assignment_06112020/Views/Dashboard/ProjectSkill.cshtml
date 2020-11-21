@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Assignment_06112020.Models.EmpProject>
+
+<div class="list-group">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th>Technology</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var prj in Model)
+            {
+                <tr>
+                    <td>@prj.Name</td>
+                    <td>@prj.StartDate</td>
+                    <td>@prj.EndDate</td>
+                    <td>@prj.Technologies</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
