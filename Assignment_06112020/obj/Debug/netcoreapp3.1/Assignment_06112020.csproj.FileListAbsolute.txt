@@ -194,3 +194,5 @@ D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razo
 D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\Dashboard\Dashboard.cshtml.g.cs
 D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\Dashboard\GetDetails.cshtml.g.cs
 D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\Dashboard\GetProject.cshtml.g.cs
+D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\Dashboard\EmployeeSkill.cshtml.g.cs
+D:\Training\Assignment_06112020\Assignment_06112020\obj\Debug\netcoreapp3.1\Razor\Views\Dashboard\ProjectSkill.cshtml.g.cs
