@@ -17,8 +17,7 @@
 <body>
 
     <div id="wrapper">
-        <!-- Navigation -->
-        <nav class="navbar navbar-custom  navbar-static-top navbar-expand-lg navbar-dark" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar  navbar-custom  navbar-static-top navbar-expand-lg navbar-dark" role="navigation" style="margin-bottom: 0">
             <a class="navbar-brand" href="#"> <img class="img-center" height="80" width="80" src="~/Images/images.png"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -47,8 +46,8 @@
         <div class="container">
             @RenderBody()
         </div>
-        <footer class=" footer1 text-muted text-center">
-            <div class="container" style="color:floralwhite;padding-top: 10px;">
+        <footer class=" footer text-muted text-center" style="position:fixed;">
+            <div class="container" >
                 Copyright &copy; My ASP.NET Application @DateTime.Now.Year
             </div>
         </footer>
