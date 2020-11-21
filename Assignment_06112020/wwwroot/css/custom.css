@@ -89,13 +89,24 @@ thead th {
     background-color: limegreen;
     border: 1px solid lightgreen;
 }
+.panel.panel-Emp{
+    background-color:orange;
+    border:1px solid orange;
+}
+#prjskl{
+    margin-top:25px;
+}
 .panel.panel-primary{
     border:1px solid lightblue;
+}
+.panel.panel-skill{
+    background-color:lightcoral;
+    border:1px solid pink;
 }
 .panel-footer{
     background-color:white;
 }
-.fa.fa-comments{
+.fa.fa-user-circle{
     color: white;
     margin-left: 25px;
 }
@@ -110,8 +121,22 @@ thead th {
 .spntxt {
     color: white;
 }
+.huge{
+    margin-top:10px;
+}
+.spntxt1 {
+    margin-top: -55px;
+    margin-left: 215px;
+    color: white;
+}
 .sidebar-search{
     margin-left:836px;
+}
+.tblclr{
+    background-color:lightsalmon;
+}
+.panel.panel-default{
+    margin-top:25px;
 }
 
 @media screen and (min-width: 320px) {
