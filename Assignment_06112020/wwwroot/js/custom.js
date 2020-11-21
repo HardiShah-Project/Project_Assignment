@@ -73,7 +73,7 @@ $(".viewDetails").click(function () {
     $(".modal-body").html('');
     $.ajax({
         type: 'GET',
-        url:  "/Dashboard/GetDetails",
+        url: "/Dashboard/GetDetails",
         data: { type: $(this).attr("data-type") },
         success: function (response) {
             $(".modal-body").html(response);
@@ -83,6 +83,9 @@ $(".viewDetails").click(function () {
             alert("Something wrong");
         }
     });
+});
+$(".ProjectDetails").click(function () {
+    $(".modal-body").html('');
     $.ajax({
         type: 'GET',
         url: "/Dashboard/GetProject",
@@ -90,6 +93,36 @@ $(".viewDetails").click(function () {
         success: function (response) {
             $(".modal-body").html(response);
             $("#ProjectModal").modal('show');
+        },
+        error: function () {
+            alert("Something wrong");
+        }
+    });
+});
+$(".EmpSkillDetails").click(function () {
+    $(".modal-body").html('');
+    $.ajax({
+        type: 'GET',
+        url: "/Dashboard/EmployeeSkill",
+        data: { type: $(this).attr("data-type") },
+        success: function (response) {
+            $(".modal-body").html(response);
+            $("#EmpSkillModal").modal('show');
+        },
+        error: function () {
+            alert("Something wrong");
+        }
+    });
+});
+$(".PrjSkillDetails").click(function () {
+    $(".modal-body").html('');
+    $.ajax({
+        type: 'GET',
+        url: "/Dashboard/ProjectSkill",
+        data: { type: $(this).attr("data-type") },
+        success: function (response) {
+            $(".modal-body").html(response);
+            $("#PrjSkillModal").modal('show');
         },
         error: function () {
             alert("Something wrong");
