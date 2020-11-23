@@ -11,12 +11,12 @@ namespace Assignment_06112020.Models
         public DbSet<Employee> Employees { get; set; }
         public DbSet<EmpProject> EmpProjects { get; set; }
         public DbSet<Skill> Skills { get; set; }
-
+      
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Employee>().HasData(
-                new Employee() { Code = 1, Name = "John", JoiningDate = DateTime.ParseExact("10/03/2019", "dd/mm/yyyy", null), ReleaseDate = DateTime.ParseExact("12/05/2021", "dd/mm/yyyy", null), Skils = ".NET" },
-                new Employee() { Code = 2, Name = "Chris", JoiningDate = DateTime.ParseExact("05/02/2020", "dd/mm/yyyy", null), ReleaseDate = DateTime.ParseExact("10/08/2021", "dd/mm/yyyy", null), Skils = "Angular" },
+                new Employee() { Code = 1, Name = "John", JoiningDate = DateTime.ParseExact("10/03/2019", "dd/mm/yyyy", null), ReleaseDate = DateTime.ParseExact("12/05/2021", "dd/mm/yyyy", null), Skils = ".NET" }, 
+                new Employee() { Code = 2, Name = "Chris", JoiningDate = DateTime.ParseExact("05/02/2020", "dd/mm/yyyy", null), ReleaseDate = DateTime.ParseExact("10/08/2021", "dd/mm/yyyy", null), Skils = "Angular"},
                 new Employee() { Code = 3, Name = "Mukesh", JoiningDate = DateTime.ParseExact("07/03/2019", "dd/mm/yyyy", null), ReleaseDate = DateTime.ParseExact("02/04/2022", "dd/mm/yyyy", null), Skils = "React" });
 
             modelBuilder.Entity<Skill>().HasData(

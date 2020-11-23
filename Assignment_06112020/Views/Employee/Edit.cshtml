@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "Edit";
-    Layout = "~/Views/Shared/_Layout1.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @using (Html.BeginForm())
@@ -41,8 +41,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Skils, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(m => m.Skils, new SelectList(Model.SkilList.Items, "SkilName", "SkilName"), new { @class = "form-control ", @id = "txtSkils" })
-                @Html.ValidationMessageFor(model => model.Skils, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.ID, new SelectList(Model.SkilList.Items, "ID", "SkilName"), new { @class = "form-control ", @id = "txtSkils" })
+                @Html.ValidationMessageFor(model => model.ID, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">

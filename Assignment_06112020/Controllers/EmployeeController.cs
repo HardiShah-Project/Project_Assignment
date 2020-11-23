@@ -25,7 +25,16 @@ namespace Assignment_06112020.Controllers
             ViewBag.SortByReleaseDate = sort == "ReleaseDate" ? "descending ReleaseDate" : "ReleaseDate";
             ViewBag.SortBySkils = sort == "Skils" ? "descending Skils" : "Skils";
 
-            var records = context.Employees.AsQueryable();
+           var records= (from t in context.Employees
+             select new Employee
+             {
+                 Code=t.Code,
+                 Name = t.Name,
+                 JoiningDate = t.JoiningDate,
+                 ReleaseDate = t.ReleaseDate,
+                 Skils = (from a in context.Skills where a.ID == t.ID select a.SkilName).FirstOrDefault()
+             }).AsQueryable();
+
             if (searchBy == "Skils")
             {
                 records = records.Where(x => x.Skils == search || search == null);
@@ -94,19 +103,19 @@ namespace Assignment_06112020.Controllers
         {
             Employee emp = new Employee();
             var skilList = context.Skills.ToList();
-            emp.SkilList = new SelectList(skilList, "SkilName", "SkillName");
+            emp.SkilList = new SelectList(skilList, "ID", "SkillName");
             return View(emp);
         }
 
         // POST: Employee/Create     
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind("Name,JoiningDate,ReleaseDate,Skils")] Employee employee)
+        public ActionResult Create([Bind("Name,JoiningDate,ReleaseDate,ID")] Employee employee)
         {
             if (ModelState.IsValid)
             {
                 context.Database.ExecuteSqlRaw("sp_AddEmployee {0},{1},{2},{3}", employee.Name,
-                employee.JoiningDate, employee.ReleaseDate, employee.Skils);
+                employee.JoiningDate, employee.ReleaseDate, employee.ID);
                 return RedirectToAction(nameof(Index));
             }
             return View(employee);
@@ -122,7 +131,7 @@ namespace Assignment_06112020.Controllers
 
             var employee = context.Employees.Find(id);
             var skilList = context.Skills.ToList();
-            employee.SkilList = new SelectList(skilList, "SkilName", "SkillName");
+            employee.SkilList = new SelectList(skilList, "ID", "SkillName");
             if (employee == null)
             {
                 return NotFound();
@@ -133,19 +142,14 @@ namespace Assignment_06112020.Controllers
         // POST: Employee/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, [Bind("Code,Name,JoiningDate,ReleaseDate,Skils")] Employee employee)
+        public ActionResult Edit( [Bind("Code,Name,JoiningDate,ReleaseDate,ID")] Employee employee)
         {
-            if (id != employee.Code)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
                 try
                 {
                     context.Database.ExecuteSqlRaw("sp_UpdateEmployee {0},{1},{2},{3},{4}", employee.Code, employee.Name,
-                    employee.JoiningDate, employee.ReleaseDate, employee.Skils);
+                    employee.JoiningDate, employee.ReleaseDate, employee.ID);
 
                 }
                 catch (Exception)

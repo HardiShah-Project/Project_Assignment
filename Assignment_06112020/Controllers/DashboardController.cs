@@ -27,7 +27,7 @@ namespace Assignment_06112020.Controllers
                 Name = c.Name,
                 JoiningDate = c.JoiningDate,
                 ReleaseDate = c.ReleaseDate,
-                Skils = c.Skils
+                Skils = (from s in context.Skills where s.ID == c.ID select s.SkilName).FirstOrDefault()
             }).ToList();
             return PartialView("~/Views/Dashboard/GetDetails.cshtml", result);
         }
@@ -39,7 +39,7 @@ namespace Assignment_06112020.Controllers
                 Name = c.Name,
                 StartDate = c.StartDate,
                 EndDate = c.EndDate,
-                Technologies = c.Technologies
+                Technologies = (from s in context.Skills where s.ID == c.ID select s.SkilName).FirstOrDefault()
             }).ToList();
             return PartialView("~/Views/Dashboard/GetProject.cshtml", result);
         }
@@ -53,7 +53,7 @@ namespace Assignment_06112020.Controllers
                        Name = t.Name,
                        JoiningDate = t.JoiningDate,
                        ReleaseDate = t.ReleaseDate,
-                       Skils=t.Skils
+                       Skils= (from s in context.Skills where s.ID == t.ID select s.SkilName).FirstOrDefault()
                    }).ToList();
             return PartialView("~/Views/Dashboard/EmployeeSkill.cshtml", emp);
         }
@@ -67,7 +67,7 @@ namespace Assignment_06112020.Controllers
                        Name = p.Name,
                        StartDate = p.StartDate,
                        EndDate = p.EndDate,
-                       Technologies = p.Technologies
+                       Technologies = (from a in context.Skills where a.ID == p.ID select a.SkilName).FirstOrDefault()
                    }).ToList();
             return PartialView("~/Views/Dashboard/ProjectSkill.cshtml", prj);
         }

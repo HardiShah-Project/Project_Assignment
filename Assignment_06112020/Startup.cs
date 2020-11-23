@@ -53,13 +53,9 @@ namespace Assignment_06112020
             app.UseEndpoints(endpoints =>
             {
 
-                endpoints.MapControllerRoute(name: "EmpProject",
-                pattern: "EmpProject/{*Index}",
-                defaults: new { controller = "EmpProject", action = "Index" });
-
-                endpoints.MapControllerRoute(name: "Home",
-                pattern: "Home/{*Index}",
-                defaults: new { controller = "Home", action = "Index" });
+                endpoints.MapControllerRoute(name: "Project",
+                pattern: "Project/{*Index}",
+                defaults: new { controller = "Project", action = "Index" });
 
                 endpoints.MapControllerRoute(name: "Dashboard",
                 pattern: "Dashboard/{*Dashboard}",

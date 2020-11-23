@@ -7,16 +7,16 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Assignment_06112020.Controllers
 {
-    public class EmpProjectController : Controller
+    public class ProjectController : Controller
     {
         private readonly EFDataContext context;
 
-        public EmpProjectController(EFDataContext _context)
+        public ProjectController(EFDataContext _context)
         {
             context = _context;
         }
 
-        // GET: EmpProject
+        // GET: Project
         public ActionResult Index(string searchBy, string search, int? page, string sort)
         {
             ViewBag.SortByName = string.IsNullOrEmpty(sort) ? "descending Name" : "";
@@ -24,7 +24,15 @@ namespace Assignment_06112020.Controllers
             ViewBag.SortByEndDate = sort == "EndDate" ? "descending EndDate" : "EndDate";
             ViewBag.SortByTechnologies = sort == "Technologies" ? "descending Technologies" : "Technologies";
      
-            var records = context.EmpProjects.AsQueryable();
+            var records = (from t in context.EmpProjects
+                           select new EmpProject
+                           {
+                               Code = t.Code,
+                               Name = t.Name,
+                               StartDate = t.StartDate,
+                               EndDate = t.EndDate,
+                               Technologies = (from a in context.Skills where a.ID == t.ID select a.SkilName).FirstOrDefault()
+                           }).AsQueryable();
             if (searchBy == "Technologies")
             {
                 records = records.Where(x => x.Technologies == search || search == null);
@@ -74,7 +82,7 @@ namespace Assignment_06112020.Controllers
            
         }
 
-        // GET: EmpProject/Details/5
+        // GET: Project/Details/5
         public ActionResult Details(int id)
         {
             if (id == 0)
@@ -91,19 +99,19 @@ namespace Assignment_06112020.Controllers
             return View(empProject);
         }
 
-        // GET: EmpProject/Create
+        // GET: Project/Create
         public ActionResult Create()
         {
             EmpProject empProject = new EmpProject();
             var technologyList = context.Skills.ToList();
-            empProject.TechnologyList = new SelectList(technologyList, "SkilName", "SkillName");
+            empProject.TechnologyList = new SelectList(technologyList, "ID", "SkillName");
             return View(empProject);
         }
 
-        // POST: EmpProject/Create       
+        // POST: Project/Create       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind("Name,StartDate,EndDate,Technologies")] EmpProject empProject)
+        public ActionResult Create([Bind("Name,StartDate,EndDate,ID")] EmpProject empProject)
         {
             if (ModelState.IsValid)
             {
@@ -114,7 +122,7 @@ namespace Assignment_06112020.Controllers
             return View(empProject);         
         }
 
-        // GET: EmpProject/Edit/5
+        // GET: Project/Edit/5
         public  ActionResult Edit(int id)
         {
             if (id == 0)
@@ -124,7 +132,7 @@ namespace Assignment_06112020.Controllers
 
             var empProject = context.EmpProjects.Find(id);
             var technologyList = context.Skills.ToList();
-            empProject.TechnologyList = new SelectList(technologyList, "SkilName", "SkillName");
+            empProject.TechnologyList = new SelectList(technologyList, "ID", "SkillName");
             if (empProject == null)
             {
                 return NotFound();
@@ -132,11 +140,11 @@ namespace Assignment_06112020.Controllers
             return View(empProject);
         }
 
-        // POST: EmpProject/Edit/5
+        // POST: Project/Edit/5
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit( [Bind("Code,Name,StartDate,EndDate,Technologies")] EmpProject empProject)
+        public ActionResult Edit( [Bind("Code,Name,StartDate,EndDate,ID")] EmpProject empProject)
         {
            
             if (ModelState.IsValid)
@@ -148,7 +156,7 @@ namespace Assignment_06112020.Controllers
                 }
                 catch (Exception)
                 {
-                    if (!EmpProjectExists(empProject.Code))
+                    if (!ProjectExists(empProject.Code))
                     {
                         return NotFound();
                     }
@@ -162,7 +170,7 @@ namespace Assignment_06112020.Controllers
             return View(empProject);
         }
 
-        // POST: EmpProject/Delete/5
+        // POST: Project/Delete/5
         [HttpPost]
         
         public ActionResult Delete(int id)
@@ -173,7 +181,7 @@ namespace Assignment_06112020.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool EmpProjectExists(int id)
+        private bool ProjectExists(int id)
         {
             return context.EmpProjects.Any(e => e.Code == id);
         }

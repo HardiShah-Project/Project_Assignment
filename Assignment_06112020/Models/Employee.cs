@@ -27,20 +27,28 @@ namespace Assignment_06112020.Models
 
         public DateTime ReleaseDate { get; set; }
 
-        [Required(ErrorMessage = "Please Choose Skils")]
         [Display(Name = " Employee's Skils")]
+        [NotMapped]
         public string Skils { get; set; }
-        public Nullable<int> ID { get; set; }
+
+        [Required]
+        public int ID { get; set; }
+
         [NotMapped]
         public int Month { get; set; }
+
         [NotMapped]
         public int Count { get; set; }
 
         [NotMapped]
         public SelectList SkilList { get; set; }
+
         [ForeignKey("ID")]
         public virtual List<Skill> skill { get; set; }
-   
+
+        [ForeignKey("Emp_Id")]
+        public virtual List<EmpProject> employees { get; set; }
+
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             throw new NotImplementedException();

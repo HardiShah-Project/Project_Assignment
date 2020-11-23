@@ -50,7 +50,7 @@ var DeleteEmpProject = function () {
     var medId = $("#hiddenId").val();
     $.ajax({
         type: "POST",
-        url: "/EmpProject/Delete",
+        url: "/Project/Delete",
         data: { id: medId },
         success: function (result) {
             $("#MyModal").modal("hide");

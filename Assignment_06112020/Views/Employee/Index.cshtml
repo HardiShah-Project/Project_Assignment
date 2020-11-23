@@ -6,7 +6,7 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
 
 <div class="col-md-12">
@@ -80,7 +80,7 @@
             </table>
         </div>
     </div>
-    <partial name="_EmpDelete" />
+    <partial name="_Delete" />
     <input type="hidden" id="hiddenId" />
     @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new
         {
