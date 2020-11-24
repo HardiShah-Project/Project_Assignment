@@ -7,11 +7,12 @@
 
     <link rel="stylesheet" href="~/css/jquery-ui.min.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.css" />
     <link rel="stylesheet" href="~/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" />
     <link rel="stylesheet" href="~/css/PagedList.css" />
     <link rel="stylesheet" href="~/css/custom.css" />
-    <link rel="stylesheet" href="~/css/font-awesome.min.css" />
 </head>
 <body>
     <nav class="navbar navbar-fixed-top navbar-custom navbar-expand-lg navbar-dark">
@@ -33,11 +34,13 @@
     <div class="container">
         @RenderBody()
     </div>
-    <footer class=" footer text-muted text-center">
-        <div class="container">
+
+    <footer class=" footer1 text-muted text-center">
+        <div class="container" style="color:floralwhite;padding-top: 10px;">
             Copyright &copy; My ASP.NET Application @DateTime.Now.Year
         </div>
     </footer>
+
     <script src="~/js/jquery-3.5.1.min.js"></script>
     <script src="~/js/jquery-ui-1.12.1.min.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
@@ -46,4 +49,3 @@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
-
