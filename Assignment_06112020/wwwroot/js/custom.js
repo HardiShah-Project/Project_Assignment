@@ -1,8 +1,8 @@
-﻿function addEmpProject() {
+﻿function addProject() {
     $.ajax(
         {
             type: "POST", //HTTP POST Method
-            url: "/EmpProject/Create",
+            url: "/Project/Create",
             data: $('#form').serialize(),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -11,11 +11,11 @@
             }
         });
 }
-function EditEmpProject() {
+function EditProject() {
     $.ajax(
         {
             type: "POST", //HTTP POST Method
-            url: "/EmpProject/Edit",
+            url: "/Project/Edit",
             data: $('#Form').serialize(),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -46,7 +46,7 @@ var Confirmdelete = function (id) {
     $("#MyModal").modal("show");
 }
 
-var DeleteEmpProject = function () {
+var DeleteProject = function () {
     var medId = $("#hiddenId").val();
     $.ajax({
         type: "POST",
