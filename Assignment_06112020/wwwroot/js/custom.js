@@ -2,7 +2,7 @@
     $.ajax(
         {
             type: "POST", //HTTP POST Method
-            url: "/Project/Create",
+            url: "../Project/Create",
             data: $('#form').serialize(),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -15,7 +15,7 @@ function EditProject() {
     $.ajax(
         {
             type: "POST", //HTTP POST Method
-            url: "/Project/Edit",
+            url: "../Project/Edit",
             data: $('#Form').serialize(),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -33,7 +33,7 @@ var DeleteEmployee = function () {
     var medId = $("#hiddenId").val();
     $.ajax({
         type: "POST",
-        url: "/Employee/Delete",
+        url: "../Employee/Delete",
         data: { id: medId },
         success: function (result) {
             $("#MyModal").modal("hide");
@@ -50,7 +50,7 @@ var DeleteProject = function () {
     var medId = $("#hiddenId").val();
     $.ajax({
         type: "POST",
-        url: "/Project/Delete",
+        url: "../Project/Delete",
         data: { id: medId },
         success: function (result) {
             $("#MyModal").modal("hide");
@@ -73,7 +73,7 @@ $(".viewDetails").click(function () {
     $(".modal-body").html('');
     $.ajax({
         type: 'GET',
-        url: "/Dashboard/GetDetails",
+        url: "./Dashboard/GetDetails",
         data: { type: $(this).attr("data-type") },
         success: function (response) {
             $(".modal-body").html(response);
@@ -88,7 +88,7 @@ $(".ProjectDetails").click(function () {
     $(".modal-body").html('');
     $.ajax({
         type: 'GET',
-        url: "/Dashboard/GetProject",
+        url: "./Dashboard/GetProject",
         data: { type: $(this).attr("data-type") },
         success: function (response) {
             $(".modal-body").html(response);
@@ -103,7 +103,7 @@ $(".EmpSkillDetails").click(function () {
     $(".modal-body").html('');
     $.ajax({
         type: 'GET',
-        url: "/Dashboard/EmployeeSkill",
+        url: "./Dashboard/EmployeeSkill",
         data: { type: $(this).attr("data-type") },
         success: function (response) {
             $(".modal-body").html(response);
@@ -118,7 +118,7 @@ $(".PrjSkillDetails").click(function () {
     $(".modal-body").html('');
     $.ajax({
         type: 'GET',
-        url: "/Dashboard/ProjectSkill",
+        url: "./Dashboard/ProjectSkill",
         data: { type: $(this).attr("data-type") },
         success: function (response) {
             $(".modal-body").html(response);
@@ -126,6 +126,99 @@ $(".PrjSkillDetails").click(function () {
         },
         error: function () {
             alert("Something wrong");
+        }
+    });
+});
+$(function () {
+    $.ajax({
+        type: "GET",
+        url: "./Dashboard/JoiningDate",
+        data: { type: $(this).attr("data-type") },
+        contentType: "application/json",
+        success: function (response) {
+            console.log(response);
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['January', 'February', 'March', 'April'],
+                    datasets: [{
+                        label: 'JoiningDate Dataset',
+                        backgroundColor: 'blue',
+                        borderColor: 'blue',
+                        data: [2, 0, 4, 3]
+                    }]
+                }
+            });
+        }
+    });
+
+    $.ajax({
+        type: "GET",
+        url: "./Dashboard/ReleaseDate",
+        data: { type: $(this).attr("data-type") },
+        contentType: "application/json",
+        success: function (response) {
+            console.log(response);
+            var ctx = document.getElementById('ReleaseChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['January', 'February', 'March', 'April'],
+                    datasets: [{
+                        label: 'ReleaseDate Dataset',
+                        backgroundColor: 'rgb(255, 99, 132)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: [0, 2, 1, 3]
+                    }]
+                }
+            });
+        }
+    });
+
+    $.ajax({
+        type: "GET",
+        url: "./Dashboard/StartDate",
+        data: { type: $(this).attr("data-type") },
+        contentType: "application/json",
+        success: function (response) {
+            console.log(response);
+            var ctx = document.getElementById('StartChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['January', 'February', 'March', 'April'],
+                    datasets: [{
+                        label: 'StartDate Dataset',
+                        backgroundColor: 'blue',
+                        borderColor: 'blue',
+                        data: [1, 3, 4, 0]
+                    }]
+                }
+            });
+        }
+    });
+
+    $.ajax({
+        type: "GET",
+        url: "./Dashboard/EndDate",
+        data: { type: $(this).attr("data-type") },
+        contentType: "application/json",
+        success: function (response) {
+            console.log(response);
+            var ctx = document.getElementById('EndChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['January', 'February', 'March', 'April'],
+                    datasets: [{
+                        label: 'EndDate Dataset',
+                        backgroundColor: 'rgb(255, 99, 132)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: [3, 1, 0, 2]
+                    }]
+                }
+            });
         }
     });
 });
