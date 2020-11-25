@@ -54,16 +54,16 @@ namespace Assignment_06112020
             {
 
                 endpoints.MapControllerRoute(name: "Project",
-                pattern: "Project/{*Index}",
-                defaults: new { controller = "Project", action = "Index" });
+                pattern: "Project/{*List}",
+                defaults: new { controller = "Project", action = "List" });
 
-                endpoints.MapControllerRoute(name: "Dashboard",
-                pattern: "Dashboard/{*Dashboard}",
-                defaults: new { controller = "Dashboard", action = "Dashboard" });
+                endpoints.MapControllerRoute(name: "Employee",
+                pattern: "Employee/{*List}",
+                defaults: new { controller = "Employee", action = "List" });
 
                 endpoints.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Employee}/{action=Index}/{id?}");
+                pattern: "{controller=Dashboard}/{action=Dashboard}/{id?}");
             });
 
         }
