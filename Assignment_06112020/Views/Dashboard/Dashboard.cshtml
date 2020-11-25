@@ -22,7 +22,7 @@
                                 <span class="spantxt">
                                     @if (ViewBag.CountEmployees != null)
                                     {
-                                    @ViewBag.CountEmployees;
+                                        @ViewBag.CountEmployees;
                                     }
                                 </span>
 
@@ -52,7 +52,7 @@
                                 <span class="spantxt">
                                     @if (ViewBag.CountProjects != null)
                                     {
-                                    @ViewBag.CountProjects;
+                                        @ViewBag.CountProjects;
                                     }
                                 </span>
                             </div>
@@ -114,18 +114,57 @@
             </div>
         </div>
 
-        <div class="col-lg-8">
+        <div class="col-lg-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-bar-chart-o fa-fw"></i> MonthWise Employees Joined
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Month-Wise Employees Joined
                 </div>
 
                 <div class="panel-body">
-                    <div id="orderByCountry"></div>
+                    @*<div id="orderByCountry"></div>*@
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Month-Wise Employees Released
+                </div>
+
+                <div class="panel-body">
+                    <canvas id="ReleaseChart"></canvas>
                 </div>
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Month-Wise Projects Start
+                </div>
+
+                <div class="panel-body">
+                    <canvas id="StartChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Month-Wise Projects End
+                </div>
+
+                <div class="panel-body">
+                    <canvas id="EndChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -183,39 +222,4 @@
         </div>
     </div>
 </div>
-@section Scripts{
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    @*<script type="text/javascript" src="https://www.google.com/uds/api/visualization/1.0/40ff64b1d9d6b3213524485974f36cc0/format+en,default+en,ui+en,corechart+en.I.js"></script>*@
-        <script type="text/javascript">
-            $(document).ready(function () {
-                google.charts.load('current', { packages: ['corechart'] });
-                       google.charts.setOnLoadCallback(OrdersByCountry);
-                function OrdersByCountry() {
-                    $.ajax({
-                        type: 'GET',
-                        url: "/Dashboard/JoiningDate",
-                        success: function (response) {
-                            console.log(response);
-                            var data = new google.visualization.DataTable();
-                            data.addColumn('string', 'JoiningDate');
-                            data.addColumn('number', 'CountOrders');
-                            for (var i = 0; i < response.result.length; i++) {
-                                data.addRow([response.result[i].Country, response.result[i].CountOrders]);
-                            }
-                            var chart = new google.visualization.ColumnChart(document.getElementById('orderByCountry'));
-                            chart.draw(data,
-                                {
-                                    title: "",
-                                    position: "top",
-                                    fontsize: "14px",
-                                    chartArea: { width: '100%' },
-                                });
-                        },
-                    });
 
-                }
-                });
-    </script>
-
-}
