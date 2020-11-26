@@ -22,7 +22,7 @@ namespace Assignment_06112020.Controllers
         {
             ViewBag.SortByName = string.IsNullOrEmpty(sort) ? "descending Name" : "";
             ViewBag.SortByJoiningDate = sort == "JoiningDate" ? "descending JoiningDate" : "JoiningDate";
-            ViewBag.SortByReleaseDate = sort == "ReleaseDate" ? "descending ReleaseDate" : "ReleaseDate";
+            ViewBag.SortByReleaseDate = sort == "ReleaseDate" ? " ReleadescendingseDate" : "ReleaseDate";
             ViewBag.SortBySkils = sort == "Skils" ? "descending Skils" : "Skils";
 
            var records= (from t in context.Employees

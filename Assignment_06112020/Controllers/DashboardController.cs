@@ -13,11 +13,13 @@ namespace Assignment_06112020.Controllers
         {
             context = _context;
         }
-        public ActionResult Dashboard()
+        public ActionResult Dashboard(string SearchText)
         {
+            var records = context.Employees;
+            var result = records.Where(x => x.Name == SearchText || SearchText == null);
             ViewBag.CountEmployees = context.Employees.Count();
             ViewBag.CountProjects = context.EmpProjects.Count();
-            return View();
+            return View(result);
         }
         public ActionResult GetDetails()
         {
@@ -66,7 +68,6 @@ namespace Assignment_06112020.Controllers
                    orderby g.Count() descending
                    select (new Employee()
                    {   
-                       //JoiningDate = g.Key.JoiningDate,
                        Month = g.Key.Month,
                        Count = g.Count()
                    })).ToList();
@@ -81,7 +82,6 @@ namespace Assignment_06112020.Controllers
                    orderby g.Count() descending
                    select (new Employee()
                    {
-                       //JoiningDate = g.Key.JoiningDate,
                        Month = g.Key.Month,
                        Count = g.Count()
                    })).ToList();
@@ -111,7 +111,6 @@ namespace Assignment_06112020.Controllers
                    orderby g.Count() descending
                    select (new EmpProject()
                    {
-                       //JoiningDate = g.Key.JoiningDate,
                        Month = g.Key.Month,
                        Count = g.Count()
                    })).ToList();
@@ -126,7 +125,6 @@ namespace Assignment_06112020.Controllers
                    orderby g.Count() descending
                    select (new EmpProject()
                    {
-                       //JoiningDate = g.Key.JoiningDate,
                        Month = g.Key.Month,
                        Count = g.Count()
                    })).ToList();
