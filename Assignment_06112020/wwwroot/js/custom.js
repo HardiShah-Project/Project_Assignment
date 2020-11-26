@@ -2,7 +2,7 @@
     $.ajax(
         {
             type: "POST", //HTTP POST Method
-            url: "../Project/Create",
+            url: '<%=Url.Action("Create")%>',
             data: $('#form').serialize(),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -15,7 +15,7 @@ function EditProject() {
     $.ajax(
         {
             type: "POST", //HTTP POST Method
-            url: "../Project/Edit",
+            url: '<%=Url.Action("Edit")%>',
             data: $('#Form').serialize(),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -33,7 +33,7 @@ var DeleteEmployee = function () {
     var medId = $("#hiddenId").val();
     $.ajax({
         type: "POST",
-        url: "../Employee/Delete",
+        url: '<%=Url.Action("Delete")%>',
         data: { id: medId },
         success: function (result) {
             $("#MyModal").modal("hide");
@@ -50,7 +50,7 @@ var DeleteProject = function () {
     var medId = $("#hiddenId").val();
     $.ajax({
         type: "POST",
-        url: "../Project/Delete",
+        url: '<%=Url.Action("Delete")%>',
         data: { id: medId },
         success: function (result) {
             $("#MyModal").modal("hide");
