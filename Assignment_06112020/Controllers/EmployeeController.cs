@@ -18,7 +18,7 @@ namespace Assignment_06112020.Controllers
         }
 
         // GET: Employee
-        public ActionResult Index(string searchBy, string search, int? page, string sort)
+        public ActionResult List(string searchBy, string search, int? page, string sort)
         {
             ViewBag.SortByName = string.IsNullOrEmpty(sort) ? "descending Name" : "";
             ViewBag.SortByJoiningDate = sort == "JoiningDate" ? "descending JoiningDate" : "JoiningDate";

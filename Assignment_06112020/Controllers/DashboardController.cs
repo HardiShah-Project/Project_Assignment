@@ -57,6 +57,37 @@ namespace Assignment_06112020.Controllers
                    }).ToList();
             return PartialView("~/Views/Dashboard/EmployeeSkill.cshtml", emp);
         }
+
+        public ActionResult JoiningDate()
+        {
+            var emp = new List<Employee>();
+            emp = (from o in context.Employees
+                   group o by new { o.JoiningDate.Month, o.JoiningDate } into g
+                   orderby g.Count() descending
+                   select (new Employee()
+                   {   
+                       //JoiningDate = g.Key.JoiningDate,
+                       Month = g.Key.Month,
+                       Count = g.Count()
+                   })).ToList();
+            return Json(new { result = emp });
+        }
+
+        public ActionResult ReleaseDate()
+        {
+            var emp = new List<Employee>();
+            emp = (from o in context.Employees
+                   group o by new { o.ReleaseDate.Month, o.ReleaseDate } into g
+                   orderby g.Count() descending
+                   select (new Employee()
+                   {
+                       //JoiningDate = g.Key.JoiningDate,
+                       Month = g.Key.Month,
+                       Count = g.Count()
+                   })).ToList();
+            return Json(new { result = emp });
+        }
+
         public ActionResult ProjectSkill()
         {
             List<EmpProject> prj = null;
@@ -70,6 +101,36 @@ namespace Assignment_06112020.Controllers
                        Technologies = (from a in context.Skills where a.ID == p.ID select a.SkilName).FirstOrDefault()
                    }).ToList();
             return PartialView("~/Views/Dashboard/ProjectSkill.cshtml", prj);
+        }
+
+        public ActionResult StartDate()
+        {
+            var emp = new List<EmpProject>();
+            emp = (from o in context.EmpProjects
+                   group o by new { o.StartDate.Month, o.StartDate } into g
+                   orderby g.Count() descending
+                   select (new EmpProject()
+                   {
+                       //JoiningDate = g.Key.JoiningDate,
+                       Month = g.Key.Month,
+                       Count = g.Count()
+                   })).ToList();
+            return Json(new { result = emp });
+        }
+
+        public ActionResult EndDate()
+        {
+            var emp = new List<EmpProject>();
+            emp = (from o in context.EmpProjects
+                   group o by new { o.EndDate.Month, o.EndDate } into g
+                   orderby g.Count() descending
+                   select (new EmpProject()
+                   {
+                       //JoiningDate = g.Key.JoiningDate,
+                       Month = g.Key.Month,
+                       Count = g.Count()
+                   })).ToList();
+            return Json(new { result = emp });
         }
     }
 }
