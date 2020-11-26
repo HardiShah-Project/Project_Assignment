@@ -55,7 +55,7 @@ namespace Assignment_06112020.Controllers
                        Name = t.Name,
                        JoiningDate = t.JoiningDate,
                        ReleaseDate = t.ReleaseDate,
-                       Skils= (from s in context.Skills where s.ID == t.ID select s.SkilName).FirstOrDefault()
+                       Skils = (from s in context.Skills where s.ID == t.ID select s.SkilName).FirstOrDefault()
                    }).ToList();
             return PartialView("~/Views/Dashboard/EmployeeSkill.cshtml", emp);
         }
@@ -64,11 +64,11 @@ namespace Assignment_06112020.Controllers
         {
             var emp = new List<Employee>();
             emp = (from o in context.Employees
-                   group o by new { o.JoiningDate.Month, o.JoiningDate } into g
+                   group o by new { o.JoiningDate.Month } into g
                    orderby g.Count() descending
                    select (new Employee()
-                   {   
-                       Month = g.Key.Month,
+                   {
+                       Month = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(g.Key.Month),
                        Count = g.Count()
                    })).ToList();
             return Json(new { result = emp });
@@ -78,11 +78,11 @@ namespace Assignment_06112020.Controllers
         {
             var emp = new List<Employee>();
             emp = (from o in context.Employees
-                   group o by new { o.ReleaseDate.Month, o.ReleaseDate } into g
+                   group o by new { o.ReleaseDate.Month } into g
                    orderby g.Count() descending
                    select (new Employee()
                    {
-                       Month = g.Key.Month,
+                       Month = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(g.Key.Month),
                        Count = g.Count()
                    })).ToList();
             return Json(new { result = emp });
@@ -107,11 +107,11 @@ namespace Assignment_06112020.Controllers
         {
             var emp = new List<EmpProject>();
             emp = (from o in context.EmpProjects
-                   group o by new { o.StartDate.Month, o.StartDate } into g
+                   group o by new { o.StartDate.Month } into g
                    orderby g.Count() descending
                    select (new EmpProject()
                    {
-                       Month = g.Key.Month,
+                       Month = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(g.Key.Month),
                        Count = g.Count()
                    })).ToList();
             return Json(new { result = emp });
@@ -121,11 +121,11 @@ namespace Assignment_06112020.Controllers
         {
             var emp = new List<EmpProject>();
             emp = (from o in context.EmpProjects
-                   group o by new { o.EndDate.Month, o.EndDate } into g
+                   group o by new { o.EndDate.Month } into g
                    orderby g.Count() descending
                    select (new EmpProject()
                    {
-                       Month = g.Key.Month,
+                       Month = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(g.Key.Month),
                        Count = g.Count()
                    })).ToList();
             return Json(new { result = emp });
