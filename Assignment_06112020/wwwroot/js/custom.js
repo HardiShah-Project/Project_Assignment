@@ -143,13 +143,32 @@ $(function () {
             var chart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels:months,
+                    labels: months,
                     datasets: [{
                         label: 'JoiningDate Count',
-                        backgroundColor: 'blue',
-                        borderColor: 'blue',
-                        data:counts
+                        backgroundColor: ['rgba(145,65,72,.5)', 'rgba(242,166,54,.5)', 'rgba(145,65,72,.5)', 'rgba(242,166,54,.5)'],
+                        borderColor: 'rgba(145,65,72,.3)',
+                        data: counts,
+                        borderWidth:1
                     }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                display: false},
+
+                            ticks: {
+                                beginAtZero: true}
+                        }],
+                        yAxes: [{
+                            gridLines: {
+                                display: false},
+
+                            ticks: {
+                                beginAtZero: true}
+                        }]
+                    }
                 }
             });
         }
@@ -171,10 +190,28 @@ $(function () {
                     labels: months,
                     datasets: [{
                         label: 'ReleaseDate Count',
-                        backgroundColor: 'rgb(255, 99, 132)',
-                        borderColor: 'rgb(255, 99, 132)',
+                        backgroundColor: ['rgba(255, 127, 80,.5)', 'rgba(145,65,72,.5)', 'rgba(255, 127, 80,.5)', 'rgba(145, 65, 72,.5)'],
+                        borderColor: 'rgba(255, 99, 132,.3)',
                         data: counts
                     }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                display: false},
+
+                            ticks: {
+                                beginAtZero: true}
+                        }],
+                        yAxes: [{
+                            gridLines: {
+                                display: false},
+
+                            ticks: {
+                                beginAtZero: true}
+                        }]
+                    }
                 }
             });
         }
@@ -196,10 +233,28 @@ $(function () {
                     labels: months,
                     datasets: [{
                         label: 'StartDate Count',
-                        backgroundColor: 'blue',
-                        borderColor: 'blue',
+                        backgroundColor: ['rgba(145,65,72,.5)', 'rgba(242,166,54,.5)', 'rgba(145,65,72,.5)', 'rgba(242,166,54,.5)'],
+                        borderColor: 'rgba(145,65,72,.3)',
                         data: counts
                     }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                display: false},
+
+                            ticks: {
+                                beginAtZero: true}
+                        }],
+                        yAxes: [{
+                            gridLines: {
+                                display: false},
+
+                            ticks: {
+                                beginAtZero: true}
+                        }]
+                    }
                 }
             });
         }
@@ -221,10 +276,28 @@ $(function () {
                     labels: months,
                     datasets: [{
                         label: 'EndDate Count',
-                        backgroundColor: 'rgb(255, 99, 132)',
-                        borderColor: 'rgb(255, 99, 132)',
+                        backgroundColor: ['rgba(255, 127, 80,.5)', 'rgba(145,65,72,.5)', 'rgba(255, 127, 80,.5)', 'rgba(145, 65, 72,.5)'],
+                        borderColor: 'rgba(255, 99, 132,.3)',
                         data: counts
                     }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                display: false},
+
+                            ticks: {
+                                beginAtZero: true}
+                        }],
+                        yAxes: [{
+                            gridLines: {
+                                display: false},
+
+                            ticks: {
+                                beginAtZero: true}
+                        }]
+                    }
                 }
             });
         }
