@@ -33,7 +33,7 @@ namespace Assignment_06112020.Models
         public int ID { get; set; }
 
         [NotMapped]
-        public int Month { get; set; }
+        public string Month { get; set; }
 
         [NotMapped]
         public int Count { get; set; }
