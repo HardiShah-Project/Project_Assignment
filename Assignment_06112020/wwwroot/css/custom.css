@@ -27,6 +27,7 @@ body {
     height: 45px;
     background: #f8f8f8;
     border-top: 1px solid #e6e6e6;
+    padding-top:12px;
 }
 .footer1{
     width:100%;
@@ -88,16 +89,19 @@ thead th {
 .panel.panel-custom {
     background-color: limegreen;
     border: 1px solid lightgreen;
+    margin-top:40px;
 }
-.panel.panel-Emp{
-    background-color:orange;
-    border:1px solid orange;
+.panel.panel-Emp {
+    background-color: orange;
+    border: 1px solid orange;
+    margin-top: 40px;
 }
 #prjskl{
     margin-top:25px;
 }
-.panel.panel-primary{
-    border:1px solid lightblue;
+.panel.panel-primary {
+    border: 1px solid lightblue;
+    margin-top: 40px;
 }
 .panel.panel-skill{
     background-color:lightcoral;

@@ -136,17 +136,19 @@ $(function () {
         data: { type: $(this).attr("data-type") },
         contentType: "application/json",
         success: function (response) {
-            console.log(response);
+            console.log(response.result);
+            var counts = response.result.map(x => x.count);
+            var months = response.result.map(x => x.month);
             var ctx = document.getElementById('myChart').getContext('2d');
             var chart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['January', 'February', 'March', 'April'],
+                    labels:months,
                     datasets: [{
-                        label: 'JoiningDate Dataset',
+                        label: 'JoiningDate Count',
                         backgroundColor: 'blue',
                         borderColor: 'blue',
-                        data: [2, 0, 4, 3]
+                        data:counts
                     }]
                 }
             });
@@ -159,17 +161,19 @@ $(function () {
         data: { type: $(this).attr("data-type") },
         contentType: "application/json",
         success: function (response) {
-            console.log(response);
+            console.log(response.result);
+            var counts = response.result.map(x => x.count);
+            var months = response.result.map(x => x.month);
             var ctx = document.getElementById('ReleaseChart').getContext('2d');
             var chart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['January', 'February', 'March', 'April'],
+                    labels: months,
                     datasets: [{
-                        label: 'ReleaseDate Dataset',
+                        label: 'ReleaseDate Count',
                         backgroundColor: 'rgb(255, 99, 132)',
                         borderColor: 'rgb(255, 99, 132)',
-                        data: [0, 2, 1, 3]
+                        data: counts
                     }]
                 }
             });
@@ -182,17 +186,19 @@ $(function () {
         data: { type: $(this).attr("data-type") },
         contentType: "application/json",
         success: function (response) {
-            console.log(response);
+            console.log(response.result);
+            var counts = response.result.map(x => x.count);
+            var months = response.result.map(x => x.month);
             var ctx = document.getElementById('StartChart').getContext('2d');
             var chart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['January', 'February', 'March', 'April'],
+                    labels: months,
                     datasets: [{
-                        label: 'StartDate Dataset',
+                        label: 'StartDate Count',
                         backgroundColor: 'blue',
                         borderColor: 'blue',
-                        data: [1, 3, 4, 0]
+                        data: counts
                     }]
                 }
             });
@@ -205,17 +211,19 @@ $(function () {
         data: { type: $(this).attr("data-type") },
         contentType: "application/json",
         success: function (response) {
-            console.log(response);
+            console.log(response.result);
+            var counts = response.result.map(x => x.count);
+            var months = response.result.map(x => x.month);
             var ctx = document.getElementById('EndChart').getContext('2d');
             var chart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['January', 'February', 'March', 'April'],
+                    labels: months,
                     datasets: [{
-                        label: 'EndDate Dataset',
+                        label: 'EndDate Count',
                         backgroundColor: 'rgb(255, 99, 132)',
                         borderColor: 'rgb(255, 99, 132)',
-                        data: [3, 1, 0, 2]
+                        data: counts
                     }]
                 }
             });
