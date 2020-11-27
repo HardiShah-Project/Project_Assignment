@@ -26,9 +26,7 @@ namespace Assignment_06112020
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddDbContext<EFDataContext>(item => item.UseSqlServer(Configuration.GetConnectionString("myconn")));
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
-
         }
-
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -38,21 +36,19 @@ namespace Assignment_06112020
             }
             else
             {
-                app.UseExceptionHandler("/Employee/Error");
+                app.UseExceptionHandler("/Shared/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseCookiePolicy();
             app.UseRouting();
             app.UseCors();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-
                 endpoints.MapControllerRoute(name: "Project",
                 pattern: "Project/{*List}",
                 defaults: new { controller = "Project", action = "List" });
