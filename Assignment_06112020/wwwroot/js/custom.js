@@ -139,8 +139,8 @@ $(function () {
             console.log(response.result);
             var counts = response.result.map(x => x.count);
             var months = response.result.map(x => x.month);
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var chart = new Chart(ctx, {
+            var ctx = document.getElementById('JoiningChart').getContext('2d');
+            var JoiningChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: months,
@@ -149,12 +149,13 @@ $(function () {
                         backgroundColor: ['rgba(145,65,72,.5)', 'rgba(242,166,54,.5)', 'rgba(145,65,72,.5)', 'rgba(242,166,54,.5)'],
                         borderColor: 'rgba(145,65,72,.3)',
                         data: counts,
-                        borderWidth:1
+                        borderWidth: 1
                     }]
                 },
                 options: {
                     scales: {
                         xAxes: [{
+                            maxBarThickness: 65,
                             gridLines: {
                                 display: false},
 
@@ -184,20 +185,22 @@ $(function () {
             var counts = response.result.map(x => x.count);
             var months = response.result.map(x => x.month);
             var ctx = document.getElementById('ReleaseChart').getContext('2d');
-            var chart = new Chart(ctx, {
+            var ReleaseChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: months,
                     datasets: [{
                         label: 'ReleaseDate Count',
-                        backgroundColor: ['rgba(255, 127, 80,.5)', 'rgba(145,65,72,.5)', 'rgba(255, 127, 80,.5)', 'rgba(145, 65, 72,.5)'],
-                        borderColor: 'rgba(255, 99, 132,.3)',
-                        data: counts
+                        backgroundColor: ['rgba(145,65,72,.5)', 'rgba(242,166,54,.5)', 'rgba(145,65,72,.5)', 'rgba(242,166,54,.5)'],
+                        borderColor: 'rgba(145,65,72,.3)',
+                        data: counts,
+                        borderWidth:1
                     }]
                 },
                 options: {
                     scales: {
                         xAxes: [{
+                            maxBarThickness: 65,
                             gridLines: {
                                 display: false},
 
@@ -214,6 +217,7 @@ $(function () {
                     }
                 }
             });
+            $('#tab2').hide();
         }
     });
 
@@ -227,7 +231,7 @@ $(function () {
             var counts = response.result.map(x => x.count);
             var months = response.result.map(x => x.month);
             var ctx = document.getElementById('StartChart').getContext('2d');
-            var chart = new Chart(ctx, {
+            var StartChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: months,
@@ -235,12 +239,14 @@ $(function () {
                         label: 'StartDate Count',
                         backgroundColor: ['rgba(145,65,72,.5)', 'rgba(242,166,54,.5)', 'rgba(145,65,72,.5)', 'rgba(242,166,54,.5)'],
                         borderColor: 'rgba(145,65,72,.3)',
-                        data: counts
+                        data: counts,
+                        borderWidth:1
                     }]
                 },
                 options: {
                     scales: {
                         xAxes: [{
+                            maxBarThickness: 65,
                             gridLines: {
                                 display: false},
 
@@ -257,6 +263,7 @@ $(function () {
                     }
                 }
             });
+            $('#tab3').hide();
         }
     });
 
@@ -270,20 +277,22 @@ $(function () {
             var counts = response.result.map(x => x.count);
             var months = response.result.map(x => x.month);
             var ctx = document.getElementById('EndChart').getContext('2d');
-            var chart = new Chart(ctx, {
+            var EndChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: months,
                     datasets: [{
                         label: 'EndDate Count',
-                        backgroundColor: ['rgba(255, 127, 80,.5)', 'rgba(145,65,72,.5)', 'rgba(255, 127, 80,.5)', 'rgba(145, 65, 72,.5)'],
-                        borderColor: 'rgba(255, 99, 132,.3)',
-                        data: counts
+                        backgroundColor: ['rgba(145,65,72,.5)', 'rgba(242,166,54,.5)', 'rgba(145,65,72,.5)', 'rgba(242,166,54,.5)'],
+                        borderColor: 'rgba(145,65,72,.3)',
+                        data: counts,
+                        borderWidth:1
                     }]
                 },
                 options: {
                     scales: {
                         xAxes: [{
+                            maxBarThickness: 65,
                             gridLines: {
                                 display: false},
 
@@ -300,6 +309,31 @@ $(function () {
                     }
                 }
             });
+            $('#tab4').hide();
         }
     });
 });
+$('#tab1btn').on('click', function () {
+    $('#tab1').show();
+    $('#tab2').hide();
+    $('#tab3').hide();
+    $('#tab4').hide();
+})
+$('#tab2btn').on('click', function () {
+    $('#tab1').hide();
+    $('#tab3').hide();
+    $('#tab4').hide();
+    $('#tab2').show();
+})
+$('#tab3btn').on('click', function () {
+    $('#tab1').hide();
+    $('#tab2').hide();
+    $('#tab4').hide();
+    $('#tab3').show();
+})
+$('#tab4btn').on('click', function () {
+    $('#tab1').hide();
+    $('#tab2').hide();
+    $('#tab3').hide();
+    $('#tab4').show();
+})
