@@ -89,19 +89,19 @@ thead th {
 .panel.panel-custom {
     background-color: limegreen;
     border: 1px solid lightgreen;
-    margin-top:100px;
+    margin-top:0px;
 }
 .panel.panel-Emp {
     background-color: orange;
     border: 1px solid orange;
-    margin-top: 100px;
+    margin-top: -1px;
 }
 #prjskl{
     margin-top:25px;
 }
 .panel.panel-primary {
     border: 1px solid lightblue;
-    margin-top: 100px;
+    margin-top: 0px;
 }
 .panel.panel-skill{
     background-color:lightcoral;
@@ -143,13 +143,12 @@ thead th {
     margin-top:25px;
 }
 .nav-tabs .nav-link{
-    color:white;
+    color:#007bff;
 }
-.nav {
-    margin-top: 15px; 
-    margin-bottom: -25px;
-    border: 1px solid rgba(0,0,0,0.1);
-    background-color:palevioletred;
+#tabs {
+    margin-top: 82px;
+    border:1px solid orange;
+    margin-left:880px;
 }
 @media screen and (min-width: 320px) {
     .navbar {
