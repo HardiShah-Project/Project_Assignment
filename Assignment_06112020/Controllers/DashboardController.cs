@@ -15,11 +15,9 @@ namespace Assignment_06112020.Controllers
         }
         public ActionResult Dashboard(string SearchText)
         {
-            var records = context.Employees;
-            var result = records.Where(x => x.Name == SearchText || SearchText == null);
             ViewBag.CountEmployees = context.Employees.Count();
             ViewBag.CountProjects = context.EmpProjects.Count();
-            return View(result);
+            return View();
         }
         public ActionResult GetDetails()
         {
@@ -65,7 +63,6 @@ namespace Assignment_06112020.Controllers
             var emp = new List<Employee>();
             emp = (from o in context.Employees
                    group o by new { o.JoiningDate.Month } into g
-                   orderby g.Count() descending
                    select (new Employee()
                    {
                        Month = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(g.Key.Month),
@@ -79,7 +76,6 @@ namespace Assignment_06112020.Controllers
             var emp = new List<Employee>();
             emp = (from o in context.Employees
                    group o by new { o.ReleaseDate.Month } into g
-                   orderby g.Count() descending
                    select (new Employee()
                    {
                        Month = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(g.Key.Month),
@@ -108,7 +104,6 @@ namespace Assignment_06112020.Controllers
             var emp = new List<EmpProject>();
             emp = (from o in context.EmpProjects
                    group o by new { o.StartDate.Month } into g
-                   orderby g.Count() descending
                    select (new EmpProject()
                    {
                        Month = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(g.Key.Month),
@@ -122,7 +117,6 @@ namespace Assignment_06112020.Controllers
             var emp = new List<EmpProject>();
             emp = (from o in context.EmpProjects
                    group o by new { o.EndDate.Month } into g
-                   orderby g.Count() descending
                    select (new EmpProject()
                    {
                        Month = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(g.Key.Month),
