@@ -55,6 +55,19 @@ namespace Assignment_06112020.Models
             {
                 yield return new ValidationResult("EndDate must be greater than StartDate");
             }
+            else if (ID == 0)
+            {
+                yield return new ValidationResult("Please choose Technology");
+
+            }
+            else if (StartDate == new DateTime(0001, 01, 01))
+            {
+                yield return new ValidationResult("Please Select Start Date");
+            }
+            else if (EndDate == new DateTime(0001, 01, 01))
+            {
+                yield return new ValidationResult("Please Select End Date");
+            }
         }
     }
 

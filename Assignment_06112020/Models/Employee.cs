@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Assignment_06112020.Models
 {
-    public class Employee: IValidatableObject
+    public class Employee : IValidatableObject
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -19,12 +19,10 @@ namespace Assignment_06112020.Models
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Please Enter Joining Date")]
-
         [Display(Name = "Joining Date")]
         public DateTime JoiningDate { get; set; }
 
         [Display(Name = "Release Date")]
-
         public DateTime ReleaseDate { get; set; }
 
         [Display(Name = " Employee's Skils")]
@@ -60,6 +58,16 @@ namespace Assignment_06112020.Models
             {
                 yield return new ValidationResult("ReleaseDate must be greater than JoiningDate");
             }
+            else if (ID == 0)
+            {
+                yield return new ValidationResult("Please choose Skill");
+
+            }
+            else if(JoiningDate == new DateTime(0001,01,01))
+            {
+                yield return new ValidationResult("Please Select Joining Date");
+            }    
         }
+
     }
 }
