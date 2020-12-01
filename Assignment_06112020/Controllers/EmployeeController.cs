@@ -103,7 +103,11 @@ namespace Assignment_06112020.Controllers
         {
             Employee emp = new Employee();
             var skilList = context.Skills.ToList();
-            emp.SkilList = new SelectList(skilList, "ID", "SkillName");
+            Skill skl = new Skill();
+            skl.ID = 0;
+            skl.SkilName = "Select Skill";
+            skilList.Add(skl);
+            emp.SkilList = new SelectList(skilList.OrderBy(x=>x.ID), "ID", "SkillName");
             return View(emp);
         }
 
@@ -116,9 +120,9 @@ namespace Assignment_06112020.Controllers
             {
                 context.Database.ExecuteSqlRaw("sp_AddEmployee {0},{1},{2},{3}", employee.Name,
                 employee.JoiningDate, employee.ReleaseDate, employee.ID);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(List));
             }
-            return View(employee);
+            return Create();
         }
 
         // GET: Employee/Edit/5
@@ -163,9 +167,9 @@ namespace Assignment_06112020.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(List));
             }
-            return View(employee);
+            return Create();
         }
 
         [HttpPost]
