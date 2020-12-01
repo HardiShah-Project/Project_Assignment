@@ -58,11 +58,6 @@ namespace Assignment_06112020.Models
             {
                 yield return new ValidationResult("ReleaseDate must be greater than JoiningDate");
             }
-            else if (ID == 0)
-            {
-                yield return new ValidationResult("Please choose Skill");
-
-            }
             else if(JoiningDate == new DateTime(0001,01,01))
             {
                 yield return new ValidationResult("Please Select Joining Date");
