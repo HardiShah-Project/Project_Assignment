@@ -145,9 +145,9 @@ $(function () {
                 data: {
                     labels: months,
                     datasets: [{
-                        label: 'JoiningDate Count',
-                        backgroundColor: ['rgba(145,65,72,.5)', 'rgba(242,166,54,.5)', 'rgba(145,65,72,.5)', 'rgba(242,166,54,.5)'],
-                        borderColor: 'rgba(145,65,72,.3)',
+                        label: ' Employee Joining ',
+                        backgroundColor: ['rgba(145,65,72,.3)', 'rgba(145,65,72,.3)', 'rgba(145,65,72,.3)', 'rgba(145,65,72,.3)'],
+                        borderColor: 'rgba(145,65,72,.8)',
                         data: counts,
                         borderWidth: 1
                     }]
@@ -190,9 +190,9 @@ $(function () {
                 data: {
                     labels: months,
                     datasets: [{
-                        label: 'ReleaseDate Count',
-                        backgroundColor: ['rgba(145,65,72,.5)', 'rgba(242,166,54,.5)', 'rgba(145,65,72,.5)', 'rgba(242,166,54,.5)'],
-                        borderColor: 'rgba(145,65,72,.3)',
+                        label: ' Employee Release',
+                        backgroundColor: ['rgba(145,65,72,.3)', 'rgba(145,65,72,.3)', 'rgba(145,65,72,.3)', 'rgba(145,65,72,.3)'],
+                        borderColor: 'rgba(145,65,72,.8)',
                         data: counts,
                         borderWidth:1
                     }]
@@ -236,9 +236,9 @@ $(function () {
                 data: {
                     labels: months,
                     datasets: [{
-                        label: 'StartDate Count',
-                        backgroundColor: ['rgba(145,65,72,.5)', 'rgba(242,166,54,.5)', 'rgba(145,65,72,.5)', 'rgba(242,166,54,.5)'],
-                        borderColor: 'rgba(145,65,72,.3)',
+                        label: ' Project Start',
+                        backgroundColor: ['rgba(145,65,72,.3)', 'rgba(145,65,72,.3)', 'rgba(145,65,72,.3)', 'rgba(145,65,72,.3)'],
+                        borderColor: 'rgba(145,65,72,.8)',
                         data: counts,
                         borderWidth:1
                     }]
@@ -282,9 +282,9 @@ $(function () {
                 data: {
                     labels: months,
                     datasets: [{
-                        label: 'EndDate Count',
-                        backgroundColor: ['rgba(145,65,72,.5)', 'rgba(242,166,54,.5)', 'rgba(145,65,72,.5)', 'rgba(242,166,54,.5)'],
-                        borderColor: 'rgba(145,65,72,.3)',
+                        label: ' Project End',
+                        backgroundColor: ['rgba(145,65,72,.3)', 'rgba(145,65,72,.3)', 'rgba(145,65,72,.3)', 'rgba(145,65,72,.3)'],
+                        borderColor: 'rgba(145,65,72,.8)',
                         data: counts,
                         borderWidth:1
                     }]

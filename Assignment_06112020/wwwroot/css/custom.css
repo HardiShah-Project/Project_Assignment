@@ -89,19 +89,19 @@ thead th {
 .panel.panel-custom {
     background-color: limegreen;
     border: 1px solid lightgreen;
-    margin-top:0px;
+    margin-top:-311px;
 }
 .panel.panel-Emp {
     background-color: orange;
     border: 1px solid orange;
-    margin-top: -1px;
+    margin-top: -189px;
 }
 #prjskl{
-    margin-top:25px;
+    margin-top:-69px;
 }
 .panel.panel-primary {
     border: 1px solid lightblue;
-    margin-top: 0px;
+    margin-top: -43px;
 }
 .panel.panel-skill{
     background-color:lightcoral;
@@ -133,22 +133,18 @@ thead th {
     margin-left: 215px;
     color: white;
 }
-.sidebar-search{
-    margin-left:836px;
-}
 .tblclr{
     background-color:lightsalmon;
 }
 .panel.panel-default{
-    margin-top:25px;
+    margin-top:0px;
 }
 .nav-tabs .nav-link{
     color:#007bff;
 }
 #tabs {
-    margin-top: 82px;
-    border:1px solid orange;
-    margin-left:880px;
+    margin-top: 102px;
+    margin-left:506px;
 }
 @media screen and (min-width: 320px) {
     .navbar {
