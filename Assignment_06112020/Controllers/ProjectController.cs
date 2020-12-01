@@ -104,11 +104,7 @@ namespace Assignment_06112020.Controllers
         {
             EmpProject empProject = new EmpProject();
             var technologyList = context.Skills.ToList();
-            Skill skl = new Skill();
-            skl.ID = 0;
-            skl.SkilName = "Select Skill";
-            technologyList.Add(skl);
-            empProject.TechnologyList = new SelectList(technologyList.OrderBy(x => x.ID), "ID", "SkillName");
+            empProject.TechnologyList = new SelectList(technologyList, "ID", "SkillName");
             return View(empProject);
         }
 
@@ -148,7 +144,7 @@ namespace Assignment_06112020.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit( [Bind("Code,Name,StartDate,EndDate,ID,TechnologyList")] EmpProject empProject)
+        public ActionResult Edit( [Bind("Code,Name,StartDate,EndDate,ID")] EmpProject empProject)
         {
            
             if (ModelState.IsValid)

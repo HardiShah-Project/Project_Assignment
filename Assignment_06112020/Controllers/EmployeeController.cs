@@ -103,11 +103,7 @@ namespace Assignment_06112020.Controllers
         {
             Employee emp = new Employee();
             var skilList = context.Skills.ToList();
-            Skill skl = new Skill();
-            skl.ID = 0;
-            skl.SkilName = "Select Skill";
-            skilList.Add(skl);
-            emp.SkilList = new SelectList(skilList.OrderBy(x=>x.ID), "ID", "SkillName");
+            emp.SkilList = new SelectList(skilList, "ID", "SkillName");
             return View(emp);
         }
 
