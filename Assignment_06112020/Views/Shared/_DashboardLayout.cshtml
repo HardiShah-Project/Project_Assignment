@@ -21,29 +21,32 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./Employee/List">Employee <span class="sr-only">(current)</span></a>
+            <ul class="navbar-nav mr-auto" >
+                <li class="nav-item active ">
+                    <a class="nav-link"  href="./">Dashboard <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="./Project/List">Project <span class="sr-only">(current)</span></a>
+                <li class="nav-item ">
+                    <a class="nav-link"  href="@Url.Action("List", "Employee")">Employee <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="@Url.Action("List", "Project")">Project <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
     </nav>
     <div id="tabs">
-        <ul class="nav nav-tabs nav-fill">
-            <li class="nav-item">
-                <a class="nav-link active" id="tab1btn" href="#">JoiningDate</a>
+        <ul class="nav nav-tabs nav-fill" id="myTab">
+            <li class="nav-item ">
+                <a class="nav-link active" data-toggle="tab" id="tab1btn" href="#">JoiningDate</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="tab2btn" href="#">ReleaseDate</a>
+                <a class="nav-link" data-toggle="tab" id="tab2btn" href="#">ReleaseDate</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="tab3btn" href="#">StartDate</a>
+                <a class="nav-link" data-toggle="tab" id="tab3btn" href="#">StartDate</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="tab4btn" href="#">EndDate</a>
+                <a class="nav-link" data-toggle="tab" id="tab4btn" href="#">EndDate</a>
             </li>
         </ul>
     </div>

@@ -5,10 +5,9 @@
 @model IPagedList<Assignment_06112020.Models.Employee>
 
 @{
-    ViewBag.Title = "List";
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
-
+<h1 class="empList">Employee List</h1>
 <div class="col-md-12">
     @using (Html.BeginForm("Index", "Employee", FormMethod.Get))
     {

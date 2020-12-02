@@ -4,14 +4,13 @@
 
 @model IPagedList<Assignment_06112020.Models.EmpProject>
 @{
-    ViewData["Title"] = "List";
     Layout = "~/Views/Shared/_ProjectLayout.cshtml";
 }
-
+<h1 class="prjList">Project List</h1>
 <div class="row">
     @using (Html.BeginForm("Index", "Project", FormMethod.Get))
     {
-        <p class="search">
+        <p class="search1">
             Search By: @Html.RadioButton("searchBy", "Name", true)<text>Name</text>
             @Html.RadioButton("searchBy", "Technologies")<text>Technologies</text>
             @Html.TextBox("search")

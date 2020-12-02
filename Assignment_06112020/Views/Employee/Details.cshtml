@@ -1,11 +1,10 @@
 ﻿@model Assignment_06112020.Models.Employee
 
 @{
-    ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <br/>
-<h1>Employee Details:</h1>
+<h1 class="empDetail">Employee Details:</h1>
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)

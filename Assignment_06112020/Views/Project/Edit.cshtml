@@ -1,10 +1,9 @@
 ﻿@model Assignment_06112020.Models.EmpProject
 
 @{
-    ViewData["Title"] = "Edit";
-    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
-
+<h1 class="editPrj">Edit Project</h1>
 @using (Html.BeginForm(new { @id = "Form" }))
 {
     @Html.AntiForgeryToken()

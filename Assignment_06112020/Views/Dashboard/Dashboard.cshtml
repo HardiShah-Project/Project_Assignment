@@ -1,13 +1,12 @@
 ﻿@{
-    ViewData["Title"] = "Dashboard";
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
-
+<h1 class="dashboard">Dashboard</h1>
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-4 col-md-6">
             <div class="panel panel-primary">
-                <div class="panel-heading">
+                <div class="panel-heading" >
                     <div class="row">
                         <div class="col-xs-3">
                             <i class="fa fa-user-circle fa-5x"></i>
@@ -17,7 +16,7 @@
                                 <span class="spantxt">
                                     @if (ViewBag.CountEmployees != null)
                                     {
-                                    @ViewBag.CountEmployees;
+                                        @ViewBag.CountEmployees;
                                     }
                                 </span>
 
@@ -98,7 +97,7 @@
                                 <span class="spantxt">
                                     @if (ViewBag.CountProjects != null)
                                     {
-                                    @ViewBag.CountProjects;
+                                        @ViewBag.CountProjects;
                                     }
                                 </span>
                             </div>

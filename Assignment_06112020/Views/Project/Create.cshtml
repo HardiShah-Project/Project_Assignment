@@ -1,15 +1,13 @@
 ﻿@model Assignment_06112020.Models.EmpProject
 
 @{
-    ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
-
+<h1 class="addPrj">Add Project</h1>
 @using (Html.BeginForm(new { @id = "form" }))
 {
     @Html.AntiForgeryToken()
     <br />
-
     <div class="form-horizontal">
         @Html.HiddenFor(model => model.Code)
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -44,7 +42,7 @@
         <div class="col-md-10">
             <div class="form-group">
                 @Html.LabelFor(model => model.Technologies, htmlAttributes: new { @class = "control-label " })
-                @Html.DropDownListFor(m => m.ID, new SelectList(Model.TechnologyList.Items, "ID", "SkilName"),"Select Technology", new { @class = "form-control ", @id = "txtTechnologies" })
+                @Html.DropDownListFor(m => m.ID, new SelectList(Model.TechnologyList.Items, "ID", "SkilName"), "Select Technology", new { @class = "form-control ", @id = "txtTechnologies" })
                 @Html.ValidationMessageFor(model => model.ID, "", new { @class = "text-danger" })
             </div>
         </div>
