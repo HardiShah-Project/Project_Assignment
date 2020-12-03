@@ -29,7 +29,7 @@ namespace Assignment_06112020.Models
         [NotMapped]
         public string Skils { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please Select Skill")]
         public int ID { get; set; }
 
         [NotMapped]
@@ -60,8 +60,12 @@ namespace Assignment_06112020.Models
             }
             else if(JoiningDate == new DateTime(0001,01,01))
             {
-                yield return new ValidationResult("Please Select Joining Date");
-            }    
+                yield return new ValidationResult("Please Enter Joining Date");
+            }
+            else if (ReleaseDate == new DateTime(0001, 01, 01))
+            {
+                yield return new ValidationResult("Please Enter Release Date");
+            }
         }
 
     }

@@ -21,7 +21,7 @@ namespace Assignment_06112020.Models
         [Display(Name = "Start Date")]
         public DateTime StartDate { get; set; }
 
-        [Required(ErrorMessage = "Please Enter End Dtae")]
+        [Required(ErrorMessage = "Please Enter End Date")]
         [Display(Name = "End Date")]
         public DateTime EndDate { get; set; }
 
@@ -29,7 +29,7 @@ namespace Assignment_06112020.Models
         [NotMapped]
         public string Technologies { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Please Select Technology")]
         public int ID { get; set; }
 
         [NotMapped]
@@ -55,14 +55,13 @@ namespace Assignment_06112020.Models
             {
                 yield return new ValidationResult("EndDate must be greater than StartDate");
             }
-            else if (ID == 0)
+            else if (StartDate == new DateTime(0001, 01, 01))
             {
-                yield return new ValidationResult("Please choose Technology");
-
+                yield return new ValidationResult("Please Enter Start Date");
             }
             else if (EndDate == new DateTime(0001, 01, 01))
             {
-                yield return new ValidationResult("Please Select End Date");
+                yield return new ValidationResult("Please Enter End Date");
             }
         }
     }
