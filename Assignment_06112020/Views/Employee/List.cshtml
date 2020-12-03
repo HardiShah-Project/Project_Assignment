@@ -25,16 +25,16 @@
                 <thead>
                     <tr class="link">
                         <th>
-                            @Html.ActionLink("Name", "Index", new { sort = ViewBag.SortByName, searchBy = Context.Request.Query["searchBy"].ToString(), search = Context.Request.Query["search"].ToString() })
+                            @Html.ActionLink("Name", "List", new { sort = ViewBag.SortByName, searchBy = Context.Request.Query["searchBy"].ToString(), search = Context.Request.Query["search"].ToString() })
                         </th>
                         <th>
-                            @Html.ActionLink("JoiningDate", "Index", new { sort = ViewBag.SortByJoiningDate })
+                            @Html.ActionLink("JoiningDate", "List", new { sort = ViewBag.SortByJoiningDate })
                         </th>
                         <th>
-                            @Html.ActionLink("ReleaseDate", "Index", new { sort = ViewBag.SortByReleaseDate })
+                            @Html.ActionLink("ReleaseDate", "List", new { sort = ViewBag.SortByReleaseDate })
                         </th>
                         <th>
-                            @Html.ActionLink("Employee's Skils", "Index", new { sort = ViewBag.SortBySkils, searchBy = Context.Request.Query["searchBy"].ToString(), search = Context.Request.Query["search"].ToString() })
+                            @Html.ActionLink("Employee's Skils", "List", new { sort = ViewBag.SortBySkils, searchBy = Context.Request.Query["searchBy"].ToString(), search = Context.Request.Query["search"].ToString() })
                         </th>
                         <th>Edit</th>
                         <th>Delete</th>
@@ -81,7 +81,7 @@
     </div>
     <partial name="_Delete" />
     <input type="hidden" id="hiddenId" />
-    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("List", new
         {
            page,
            searchBy = Context.Request.Query["searchBy"].ToString(),

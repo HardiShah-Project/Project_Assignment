@@ -25,16 +25,16 @@
                     <thead>
                         <tr class="link">
                             <th>
-                                @Html.ActionLink("Name", "Index", new { sort = ViewBag.SortByName, searchBy = Context.Request.Query["searchBy"].ToString(), search = Context.Request.Query["search"].ToString() })
+                                @Html.ActionLink("Name", "List", new { sort = ViewBag.SortByName, searchBy = Context.Request.Query["searchBy"].ToString(), search = Context.Request.Query["search"].ToString() })
                             </th>
                             <th>
-                                @Html.ActionLink("StartDate", "Index", new { sort = ViewBag.SortByStartDate })
+                                @Html.ActionLink("StartDate", "List", new { sort = ViewBag.SortByStartDate })
                             </th>
                             <th>
-                                @Html.ActionLink("EndDate", "Index", new { sort = ViewBag.SortByEndDate })
+                                @Html.ActionLink("EndDate", "List", new { sort = ViewBag.SortByEndDate })
                             </th>
                             <th>
-                                @Html.ActionLink("Technologies", "Index", new { sort = ViewBag.SortByTechnologies, searchBy = Context.Request.Query["searchBy"].ToString(), search = Context.Request.Query["search"].ToString() })
+                                @Html.ActionLink("Technologies", "List", new { sort = ViewBag.SortByTechnologies, searchBy = Context.Request.Query["searchBy"].ToString(), search = Context.Request.Query["search"].ToString() })
                             </th>
                             <th>Edit</th>
                             <th>Delete</th>
@@ -81,7 +81,7 @@
         </div>
         <partial name="_Delete" />
         <input type="hidden" id="hiddenId" />
-        @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("List", new
         {
            page,
            searchBy = Context.Request.Query["searchBy"].ToString(),
