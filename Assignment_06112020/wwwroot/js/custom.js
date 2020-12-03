@@ -33,7 +33,7 @@ var DeleteEmployee = function () {
     var medId = $("#hiddenId").val();
     $.ajax({
         type: "POST",
-        url: '<%=Url.Action("Delete")%>',
+        url:"./Employee/Delete",
         data: { id: medId },
         success: function (result) {
             $("#MyModal").modal("hide");
@@ -50,7 +50,7 @@ var DeleteProject = function () {
     var medId = $("#hiddenId").val();
     $.ajax({
         type: "POST",
-        url: '<%=Url.Action("Delete")%>',
+        url:"./Project/Delete",
         data: { id: medId },
         success: function (result) {
             $("#MyModal").modal("hide");
