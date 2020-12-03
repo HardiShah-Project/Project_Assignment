@@ -172,7 +172,7 @@ namespace Assignment_06112020.Controllers
         public ActionResult Delete(int id)
         {
             var emp = context.Database.ExecuteSqlRaw("sp_DeleteEmployee {0}", id);
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(List));
         }
 
         private bool EmployeeExists(int id)

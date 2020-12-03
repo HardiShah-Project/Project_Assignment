@@ -178,7 +178,7 @@ namespace Assignment_06112020.Controllers
             var empProject = context.EmpProjects.Find(id);
             context.EmpProjects.Remove(empProject);
             context.SaveChanges();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(List));
         }
 
         private bool ProjectExists(int id)
